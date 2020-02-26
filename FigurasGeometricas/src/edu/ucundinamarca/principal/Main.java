@@ -16,7 +16,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here        
-        new FrameFirura().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameFirura().setVisible(true);
+            }
+        });
         
     }
     
