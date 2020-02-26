@@ -9,13 +9,15 @@ package edu.ucundinamarca.principal;
  *
  * @author YEISON
  */
-public class FrameFirura extends javax.swing.JFrame {
+public class FrameFigura extends javax.swing.JFrame {
 
     /**
      * Creates new form JFigura
      */
-    public FrameFirura() {
+    public FrameFigura() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("FIGURAS");
     }
 
     /**
@@ -91,8 +93,6 @@ public class FrameFirura extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanelCuadrado;

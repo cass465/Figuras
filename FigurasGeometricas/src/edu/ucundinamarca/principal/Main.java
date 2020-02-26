@@ -18,7 +18,8 @@ public class Main {
         // TODO code application logic here        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameFirura().setVisible(true);
+             new FrameFigura().setVisible(true);
+                
             }
         });
         
