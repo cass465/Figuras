@@ -141,7 +141,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         jLabel20.setText("AREA");
 
-        colorCuadradoBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "COLOR", "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO" }));
+        colorCuadradoBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO", "NARANJA" }));
 
         javax.swing.GroupLayout panelCuadradoLayout = new javax.swing.GroupLayout(panelCuadrado);
         panelCuadrado.setLayout(panelCuadradoLayout);
@@ -285,7 +285,7 @@ public class FrameFigura extends javax.swing.JFrame {
             }
         });
 
-        colorRectanguloBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "COLOR", "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO" }));
+        colorRectanguloBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO", "NARANJA" }));
 
         javax.swing.GroupLayout panelRectanguloLayout = new javax.swing.GroupLayout(panelRectangulo);
         panelRectangulo.setLayout(panelRectanguloLayout);
@@ -425,7 +425,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         jLabel25.setText("TIPO");
 
-        colorTrianguloBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "COLOR", "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO" }));
+        colorTrianguloBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ROJO", "VERDE", "AZUL", "AMARILLO", "NEGRO", "NARANJA" }));
 
         javax.swing.GroupLayout panelTrianguloLayout = new javax.swing.GroupLayout(panelTriangulo);
         panelTriangulo.setLayout(panelTrianguloLayout);
@@ -579,9 +579,9 @@ public class FrameFigura extends javax.swing.JFrame {
         pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 505);
         
         if (txtTrianguloX1.getText().trim().length() != 0){
-            float[] coordenada1 = {Float.parseFloat(txtTrianguloX1.getText()),Float.parseFloat(txtTrianguloY1.getText())};
-            float[] coordenada2 = {Float.parseFloat(txtTrianguloX2.getText()),Float.parseFloat(txtTrianguloY2.getText())};
-            float[] coordenada3 = {Float.parseFloat(txtTrianguloX3.getText()),Float.parseFloat(txtTrianguloY3.getText())};
+            byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
             
             triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
