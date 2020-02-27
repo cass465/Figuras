@@ -15,10 +15,18 @@ import java.awt.Graphics;
 public class Cuadrilatero extends Figura {
     
     private byte[] coordenada4;
+   
 
     public Cuadrilatero(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
         super(coordenada1, coordenada2, coordenada3, color);
         this.coordenada4=coordenada4;
+    }
+    
+    
+     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4 ) {
+       
+         
+         return false;
     }
     
     

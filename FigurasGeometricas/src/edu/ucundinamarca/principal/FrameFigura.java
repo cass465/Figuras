@@ -99,7 +99,24 @@ public class FrameFigura extends javax.swing.JFrame {
         colorTrianguloBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(820, 620));
+
+        txtCuadradoY3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoY3KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoX4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX4KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoY4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoY4KeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("   X");
 
@@ -112,6 +129,51 @@ public class FrameFigura extends javax.swing.JFrame {
         jLabel11.setText("COORDENADA 4");
 
         jLabel12.setText("COORDENADA 3");
+
+        txtCuadradoX1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtCuadradoX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX1KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoY1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoY1KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoX2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        txtCuadradoX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX2KeyTyped(evt);
+            }
+        });
+        txtCuadradoX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX2KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoY2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoY2KeyTyped(evt);
+            }
+        });
+
+        txtCuadradoX3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        txtCuadradoX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX1KeyTyped(evt);
+            }
+        });
+        txtCuadradoX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuadradoX3KeyTyped(evt);
+            }
+        });
 
         pnlGraficaCuadrado.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaCuadrado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -244,6 +306,24 @@ public class FrameFigura extends javax.swing.JFrame {
 
         tabbedPanel.addTab("CUADRADO", panelCuadrado);
 
+        txtRectanguloY3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloY3KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloX4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloX4KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloY4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloY4KeyTyped(evt);
+            }
+        });
+
         jLabel1.setText("   X");
 
         jLabel2.setText("   Y");
@@ -255,6 +335,36 @@ public class FrameFigura extends javax.swing.JFrame {
         jLabel5.setText("COORDENADA 4");
 
         jLabel6.setText("COORDENADA 3");
+
+        txtRectanguloX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloX1KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloY1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloY1KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloX2KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloY2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloY2KeyTyped(evt);
+            }
+        });
+
+        txtRectanguloX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRectanguloX3KeyTyped(evt);
+            }
+        });
 
         pnlGraficaRectangulo.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaRectangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -384,6 +494,12 @@ public class FrameFigura extends javax.swing.JFrame {
 
         tabbedPanel.addTab("RECTANGULO", panelRectangulo);
 
+        txtTrianguloY3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloY3KeyTyped(evt);
+            }
+        });
+
         pnlGraficaTriangulo.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaTriangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         pnlGraficaTriangulo.setPreferredSize(new java.awt.Dimension(520, 520));
@@ -408,6 +524,36 @@ public class FrameFigura extends javax.swing.JFrame {
         jLabel16.setText("COORDENADA 2");
 
         jLabel18.setText("COORDENADA 3");
+
+        txtTrianguloX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloX1KeyTyped(evt);
+            }
+        });
+
+        txtTrianguloY1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloY1KeyTyped(evt);
+            }
+        });
+
+        txtTrianguloX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloX2KeyTyped(evt);
+            }
+        });
+
+        txtTrianguloY2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloY2KeyTyped(evt);
+            }
+        });
+
+        txtTrianguloX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTrianguloX3KeyTyped(evt);
+            }
+        });
 
         perimetroTrianguloLabel.setText("PERIMETRO:");
 
@@ -543,13 +689,14 @@ public class FrameFigura extends javax.swing.JFrame {
 
                 pnlGraficaCuadrado.getGraphics().drawLine(0, 10, 20, 10);
             }
-            
-            if(i!=10)
-            pnlGraficaCuadrado.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+
+            if (i != 10) {
+                pnlGraficaCuadrado.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+            }
             pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
         }
 
-        if (txtCuadradoX1.getText().trim().length() != 0 ) {
+        if (txtCuadradoX1.getText().trim().length() != 0) {
             byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
@@ -582,8 +729,8 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaRectangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
             pnlGraficaRectangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
-       
-        if (txtRectanguloX1.getText().trim().length() != 0 ) {
+
+        if (txtRectanguloX1.getText().trim().length() != 0) {
             byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
@@ -632,7 +779,7 @@ public class FrameFigura extends javax.swing.JFrame {
             triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
             triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
             triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
-            
+
             areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
             perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
             tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
@@ -641,6 +788,133 @@ public class FrameFigura extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
+    private void validarCampos(java.awt.event.KeyEvent evt, javax.swing.JTextField text) {
+        char caracter = evt.getKeyChar();
+        //Validar que no sea una letra o , o .
+        if (Character.isLetter(caracter) == true || caracter == '.' || caracter == ',') {
+            //El caracter pulsado se rechaza
+            evt.consume();
+            JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10 ", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+
+        }
+        //Validar que sea un numero entre 1 y 10
+        if (Integer.parseInt(text.getText() + caracter) > 10) {
+            evt.consume();
+            JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }
+    private void txtCuadradoX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX1KeyTyped
+
+        this.validarCampos(evt, txtCuadradoX1);
+    }//GEN-LAST:event_txtCuadradoX1KeyTyped
+
+    private void txtCuadradoX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoX2);
+    }//GEN-LAST:event_txtCuadradoX2KeyTyped
+
+    private void txtCuadradoX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoX3);
+    }//GEN-LAST:event_txtCuadradoX3KeyTyped
+
+    private void txtCuadradoX4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX4KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoX4);
+    }//GEN-LAST:event_txtCuadradoX4KeyTyped
+
+    private void txtCuadradoY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY1KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoY1);
+    }//GEN-LAST:event_txtCuadradoY1KeyTyped
+
+    private void txtCuadradoY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoY2);
+    }//GEN-LAST:event_txtCuadradoY2KeyTyped
+
+    private void txtCuadradoY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoY3);
+    }//GEN-LAST:event_txtCuadradoY3KeyTyped
+
+    private void txtCuadradoY4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY4KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtCuadradoY4);
+    }//GEN-LAST:event_txtCuadradoY4KeyTyped
+
+    private void txtRectanguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX1KeyTyped
+        this.validarCampos(evt, txtRectanguloX1);       
+    }//GEN-LAST:event_txtRectanguloX1KeyTyped
+
+    private void txtRectanguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloX2);     
+    }//GEN-LAST:event_txtRectanguloX2KeyTyped
+
+    private void txtRectanguloX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloX3);     
+    }//GEN-LAST:event_txtRectanguloX3KeyTyped
+
+    private void txtRectanguloX4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX4KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloX4);     
+    }//GEN-LAST:event_txtRectanguloX4KeyTyped
+
+    private void txtRectanguloY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY1KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloY1);     
+    }//GEN-LAST:event_txtRectanguloY1KeyTyped
+
+    private void txtRectanguloY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloY2); 
+    }//GEN-LAST:event_txtRectanguloY2KeyTyped
+
+    private void txtRectanguloY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloY3); 
+    }//GEN-LAST:event_txtRectanguloY3KeyTyped
+
+    private void txtRectanguloY4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY4KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtRectanguloY4); 
+    }//GEN-LAST:event_txtRectanguloY4KeyTyped
+
+    private void txtTrianguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX1KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloX1); 
+    }//GEN-LAST:event_txtTrianguloX1KeyTyped
+
+    private void txtTrianguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloX2);
+    }//GEN-LAST:event_txtTrianguloX2KeyTyped
+
+    private void txtTrianguloX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloX3);
+    }//GEN-LAST:event_txtTrianguloX3KeyTyped
+
+    private void txtTrianguloY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY1KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloY1);
+    }//GEN-LAST:event_txtTrianguloY1KeyTyped
+
+    private void txtTrianguloY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY2KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloY2);
+    }//GEN-LAST:event_txtTrianguloY2KeyTyped
+
+    private void txtTrianguloY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY3KeyTyped
+        // TODO add your handling code here:
+        this.validarCampos(evt, txtTrianguloY3);
+    }//GEN-LAST:event_txtTrianguloY3KeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
