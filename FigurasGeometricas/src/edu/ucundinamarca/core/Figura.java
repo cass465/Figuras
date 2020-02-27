@@ -17,6 +17,7 @@ public class Figura {
     private byte[] coordenada1;
     private byte[] coordenada2;
     private byte[] coordenada3;
+    private float lado1;
     private float area;
     private float perimetro;
     private String color;
@@ -69,6 +70,15 @@ public class Figura {
     public void hallarPerimetro(float lado1, float lado2, float lado3){
         this.perimetro = lado1 + lado2 + lado3;
     }
+
+    public void setLado1(float lado1) {
+        this.lado1 = lado1;
+    }
+
+    public float getLado1() {
+        return lado1;
+    }
+    
     public float getArea() {
         return area;
     }
