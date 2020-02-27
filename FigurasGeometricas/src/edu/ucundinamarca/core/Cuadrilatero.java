@@ -13,25 +13,43 @@ import java.awt.Graphics;
  * @author YEISON
  */
 public class Cuadrilatero extends Figura {
-    
+
     private byte[] coordenada4;
-   
 
     public Cuadrilatero(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
         super(coordenada1, coordenada2, coordenada3, color);
-        this.coordenada4=coordenada4;
+        this.coordenada4 = coordenada4;
     }
-    
-    
-     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4 ) {
-       
-         
-         return false;
+
+    //valida las coordenadas del cuadrado
+    public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
+
+        if ((coordenada1[0] == coordenada2[0] && coordenada1[1] == coordenada2[1])
+                || (coordenada1[0] == coordenada3[0] && coordenada1[1] == coordenada3[1])
+                || (coordenada1[0] == coordenada4[0] && coordenada1[1] == coordenada4[1])
+                || (coordenada2[0] == coordenada3[0] && coordenada2[1] == coordenada3[1])
+                || (coordenada2[0] == coordenada4[0] && coordenada2[1] == coordenada4[1])
+                || (coordenada3[0] == coordenada4[0] && coordenada3[1] == coordenada4[1])) {
+            return false;
+        }
+        if (coordenada1[1] != coordenada2[1] || coordenada1[0] == coordenada2[0]) {
+            return false;
+        } else if (coordenada2[0] != coordenada3[0]) {
+            return false;
+        } else if (coordenada3[1] != coordenada4[1]) {
+            return false;
+        } else if (coordenada1[0] != coordenada4[0]) {
+            return false;
+        } else if((coordenada1[0]+coordenada2[0]!=coordenada2[1]+coordenada3[1])) {
+            return false;
+        }else {
+            return true;
+        }
+
     }
-    
-    
-     public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[], byte coordenada4[]){
-        switch(super.getColor()){
+
+    public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[], byte coordenada4[]) {
+        switch (super.getColor()) {
             case "ROJO":
                 graficador.setColor(Color.RED);
                 break;
@@ -51,13 +69,12 @@ public class Cuadrilatero extends Figura {
                 graficador.setColor(Color.ORANGE);
                 break;
         }
-        
+
         /*graficador.drawLine(coordenada1[0]*50+10, 500-(coordenada1[1]*50), coordenada2[0]*50+10, 500-coordenada2[1]*50);
-        graficador.drawLine(coordenada2[0]*50+10, 500-coordenada2[1]*50, coordenada3[0]*50+10, 500-coordenada3[1]*50);
-        graficador.drawLine(coordenada3[0]*50+10, 500-coordenada3[1]*50, coordenada1[0]*50+10, 500-coordenada1[1]*50);*/
-        
-        int[] xCoordenadas = {coordenada1[0]*50+10, coordenada2[0]*50+10, coordenada3[1]*50+10, coordenada4[0]*50+10};
-        int[] yCoordenadas = {510-coordenada1[1]*50, 510-coordenada2[1]*50, 510-coordenada3[1]*50, 510-coordenada4[1]*50};
+         graficador.drawLine(coordenada2[0]*50+10, 500-coordenada2[1]*50, coordenada3[0]*50+10, 500-coordenada3[1]*50);
+         graficador.drawLine(coordenada3[0]*50+10, 500-coordenada3[1]*50, coordenada1[0]*50+10, 500-coordenada1[1]*50);*/
+        int[] xCoordenadas = {coordenada1[0] * 50 + 10, coordenada2[0] * 50 + 10, coordenada3[0] * 50 + 10, coordenada4[0] * 50 + 10};
+        int[] yCoordenadas = {510 - coordenada1[1] * 50, 510 - coordenada2[1] * 50, 510 - coordenada3[1] * 50, 510 - coordenada4[1] * 50};
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 4);
     }
 }

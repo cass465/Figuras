@@ -7,6 +7,7 @@ package edu.ucundinamarca.principal;
 
 import edu.ucundinamarca.core.Triangulo;
 import edu.ucundinamarca.core.Cuadrado;
+import edu.ucundinamarca.core.Rectangulo;
 import javax.swing.JOptionPane;
 
 /**
@@ -162,13 +163,6 @@ public class FrameFigura extends javax.swing.JFrame {
             }
         });
 
-        txtCuadradoX3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
-        txtCuadradoX3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCuadradoX1KeyTyped(evt);
-            }
-        });
         txtCuadradoX3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCuadradoX3KeyTyped(evt);
@@ -701,9 +695,16 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
             byte[] coordenada4 = {Byte.parseByte(txtCuadradoX4.getText()), Byte.parseByte(txtCuadradoY4.getText())};
+
             Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString());
 
-            cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            if (cuadrado.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
+                cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            } else {
+                JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
         } else {
             JOptionPane.showMessageDialog(panelCuadrado, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
@@ -735,9 +736,16 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
             byte[] coordenada4 = {Byte.parseByte(txtRectanguloX4.getText()), Byte.parseByte(txtRectanguloY4.getText())};
-            Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
 
-            cuadrado.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            Rectangulo rectangulo = new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
+
+            if (rectangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
+                rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            } else {
+                JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
         } else {
             JOptionPane.showMessageDialog(panelRectangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
@@ -848,47 +856,47 @@ public class FrameFigura extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCuadradoY4KeyTyped
 
     private void txtRectanguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX1KeyTyped
-        this.validarCampos(evt, txtRectanguloX1);       
+        this.validarCampos(evt, txtRectanguloX1);
     }//GEN-LAST:event_txtRectanguloX1KeyTyped
 
     private void txtRectanguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX2KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloX2);     
+        this.validarCampos(evt, txtRectanguloX2);
     }//GEN-LAST:event_txtRectanguloX2KeyTyped
 
     private void txtRectanguloX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX3KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloX3);     
+        this.validarCampos(evt, txtRectanguloX3);
     }//GEN-LAST:event_txtRectanguloX3KeyTyped
 
     private void txtRectanguloX4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX4KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloX4);     
+        this.validarCampos(evt, txtRectanguloX4);
     }//GEN-LAST:event_txtRectanguloX4KeyTyped
 
     private void txtRectanguloY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY1KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloY1);     
+        this.validarCampos(evt, txtRectanguloY1);
     }//GEN-LAST:event_txtRectanguloY1KeyTyped
 
     private void txtRectanguloY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY2KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloY2); 
+        this.validarCampos(evt, txtRectanguloY2);
     }//GEN-LAST:event_txtRectanguloY2KeyTyped
 
     private void txtRectanguloY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY3KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloY3); 
+        this.validarCampos(evt, txtRectanguloY3);
     }//GEN-LAST:event_txtRectanguloY3KeyTyped
 
     private void txtRectanguloY4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY4KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtRectanguloY4); 
+        this.validarCampos(evt, txtRectanguloY4);
     }//GEN-LAST:event_txtRectanguloY4KeyTyped
 
     private void txtTrianguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX1KeyTyped
         // TODO add your handling code here:
-        this.validarCampos(evt, txtTrianguloX1); 
+        this.validarCampos(evt, txtTrianguloX1);
     }//GEN-LAST:event_txtTrianguloX1KeyTyped
 
     private void txtTrianguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX2KeyTyped

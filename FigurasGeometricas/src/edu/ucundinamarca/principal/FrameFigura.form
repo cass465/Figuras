@@ -261,9 +261,6 @@
               <Events>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCuadradoX3KeyTyped"/>
               </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="txtCuadradoX3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));&#xa;&#xa;txtCuadradoX3.addKeyListener(new java.awt.event.KeyAdapter() {&#xa;    public void keyTyped(java.awt.event.KeyEvent evt) {&#xa;        txtCuadradoX1KeyTyped(evt);&#xa;    }&#xa;});"/>
-              </AuxValues>
             </Component>
             <Container class="javax.swing.JPanel" name="pnlGraficaCuadrado">
               <Properties>
