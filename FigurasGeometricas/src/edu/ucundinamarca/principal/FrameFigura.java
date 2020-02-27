@@ -5,6 +5,9 @@
  */
 package edu.ucundinamarca.principal;
 
+import edu.ucundinamarca.core.Triangulo;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author YEISON
@@ -108,17 +111,17 @@ public class FrameFigura extends javax.swing.JFrame {
         jLabel12.setText("COORDENADA 3");
 
         pnlGraficaCuadrado.setBackground(new java.awt.Color(102, 102, 255));
-        pnlGraficaCuadrado.setPreferredSize(new java.awt.Dimension(410, 410));
+        pnlGraficaCuadrado.setPreferredSize(new java.awt.Dimension(510, 510));
 
         javax.swing.GroupLayout pnlGraficaCuadradoLayout = new javax.swing.GroupLayout(pnlGraficaCuadrado);
         pnlGraficaCuadrado.setLayout(pnlGraficaCuadradoLayout);
         pnlGraficaCuadradoLayout.setHorizontalGroup(
             pnlGraficaCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         pnlGraficaCuadradoLayout.setVerticalGroup(
             pnlGraficaCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
         btnGraficarCuadrado.setText("GRAFICAR");
@@ -223,7 +226,7 @@ public class FrameFigura extends javax.swing.JFrame {
                     .addComponent(lblPerimetroCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCuadradoLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlGraficaCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
@@ -245,17 +248,17 @@ public class FrameFigura extends javax.swing.JFrame {
         jLabel6.setText("COORDENADA 3");
 
         pnlGraficaRectangulo.setBackground(new java.awt.Color(102, 102, 255));
-        pnlGraficaRectangulo.setPreferredSize(new java.awt.Dimension(410, 410));
+        pnlGraficaRectangulo.setPreferredSize(new java.awt.Dimension(510, 510));
 
         javax.swing.GroupLayout pnlGraficaRectanguloLayout = new javax.swing.GroupLayout(pnlGraficaRectangulo);
         pnlGraficaRectangulo.setLayout(pnlGraficaRectanguloLayout);
         pnlGraficaRectanguloLayout.setHorizontalGroup(
             pnlGraficaRectanguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         pnlGraficaRectanguloLayout.setVerticalGroup(
             pnlGraficaRectanguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
         jLabel21.setText("PERIMETRO");
@@ -361,23 +364,23 @@ public class FrameFigura extends javax.swing.JFrame {
                     .addGroup(panelRectanguloLayout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(pnlGraficaRectangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("RECTANGULO", panelRectangulo);
 
         pnlGraficaTriangulo.setBackground(new java.awt.Color(102, 102, 255));
-        pnlGraficaTriangulo.setPreferredSize(new java.awt.Dimension(410, 410));
+        pnlGraficaTriangulo.setPreferredSize(new java.awt.Dimension(510, 510));
 
         javax.swing.GroupLayout pnlGraficaTrianguloLayout = new javax.swing.GroupLayout(pnlGraficaTriangulo);
         pnlGraficaTriangulo.setLayout(pnlGraficaTrianguloLayout);
         pnlGraficaTrianguloLayout.setHorizontalGroup(
             pnlGraficaTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         pnlGraficaTrianguloLayout.setVerticalGroup(
             pnlGraficaTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
         jLabel13.setText("   X");
@@ -493,7 +496,7 @@ public class FrameFigura extends javax.swing.JFrame {
                     .addGroup(panelTrianguloLayout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(pnlGraficaTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("TRIANGULO", panelTriangulo);
@@ -502,13 +505,13 @@ public class FrameFigura extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("TRIANGULO");
@@ -518,20 +521,32 @@ public class FrameFigura extends javax.swing.JFrame {
 
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
         // TODO add your handling code here:
-        pnlGraficaCuadrado.getGraphics().drawLine(10, 0, 10, 400);
-        pnlGraficaCuadrado.getGraphics().drawLine(10, 400, 410, 400);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 0, 10, 500);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 500, 510, 500);
     }//GEN-LAST:event_btnGraficarCuadradoActionPerformed
 
     private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
-        pnlGraficaRectangulo.getGraphics().drawLine(10, 0, 10, 400);
-        pnlGraficaRectangulo.getGraphics().drawLine(10, 400, 410, 400);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 0, 10, 500);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 500, 510, 500);
     }//GEN-LAST:event_btnGraficarRectanguloActionPerformed
 
     private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
         // TODO add your handling code here:
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 10, 400);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 400, 410, 400);
+        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 10, 500);
+        pnlGraficaTriangulo.getGraphics().drawLine(10, 500, 510, 500);
+        if (txtTrianguloX1.getText().trim().length() != 0){
+            float[] coordenada1 = {Float.parseFloat(txtTrianguloX1.getText()),Float.parseFloat(txtTrianguloY1.getText())};
+            float[] coordenada2 = {Float.parseFloat(txtTrianguloX2.getText()),Float.parseFloat(txtTrianguloY2.getText())};
+            float[] coordenada3 = {Float.parseFloat(txtTrianguloX3.getText()),Float.parseFloat(txtTrianguloY3.getText())};
+            Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3,"Rojo");
+            
+            triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3, null);
+        }
+        else{
+            JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+                JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
 
 
