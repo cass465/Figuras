@@ -36,9 +36,5 @@ public class Figura {
         graficador.drawLine((int)coordenada1[0]*50+10, 500-(int)coordenada1[1]*50, (int)coordenada2[0]*50+10, 500-(int)coordenada2[1]*50);
         graficador.drawLine((int)coordenada2[0]*50+10, 500-(int)coordenada2[1]*50, (int)coordenada3[0]*50+10, 500-(int)coordenada3[1]*50);
         graficador.drawLine((int)coordenada3[0]*50+10, 500-(int)coordenada3[1]*50, (int)coordenada1[0]*50+10, 500-(int)coordenada1[1]*50);
-        
-        System.out.println((int)coordenada1[0]*50+10 + " " + (int)coordenada1[1]*50+400);
-        System.out.println((int)coordenada2[0]*50 + " " + (int)coordenada2[1]*50+400);
-        System.out.println((int)coordenada3[0]*50+10 + " " + (int)coordenada3[1]*50+400);
     }
 }
