@@ -6,6 +6,7 @@
 package edu.ucundinamarca.principal;
 
 import edu.ucundinamarca.core.Triangulo;
+import edu.ucundinamarca.core.Cuadrado;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +22,7 @@ public class FrameFigura extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("FIGURAS");
-        
-      
+
     }
 
     /**
@@ -102,6 +102,7 @@ public class FrameFigura extends javax.swing.JFrame {
         colorTrianguloBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(820, 620));
 
         jLabel7.setText("   X");
 
@@ -117,17 +118,16 @@ public class FrameFigura extends javax.swing.JFrame {
 
         pnlGraficaCuadrado.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaCuadrado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        pnlGraficaCuadrado.setPreferredSize(new java.awt.Dimension(510, 510));
 
         javax.swing.GroupLayout pnlGraficaCuadradoLayout = new javax.swing.GroupLayout(pnlGraficaCuadrado);
         pnlGraficaCuadrado.setLayout(pnlGraficaCuadradoLayout);
         pnlGraficaCuadradoLayout.setHorizontalGroup(
             pnlGraficaCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
         pnlGraficaCuadradoLayout.setVerticalGroup(
             pnlGraficaCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         btnGraficarCuadrado.setText("GRAFICAR");
@@ -261,17 +261,17 @@ public class FrameFigura extends javax.swing.JFrame {
 
         pnlGraficaRectangulo.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaRectangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        pnlGraficaRectangulo.setPreferredSize(new java.awt.Dimension(510, 510));
+        pnlGraficaRectangulo.setPreferredSize(new java.awt.Dimension(520, 520));
 
         javax.swing.GroupLayout pnlGraficaRectanguloLayout = new javax.swing.GroupLayout(pnlGraficaRectangulo);
         pnlGraficaRectangulo.setLayout(pnlGraficaRectanguloLayout);
         pnlGraficaRectanguloLayout.setHorizontalGroup(
             pnlGraficaRectanguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
         pnlGraficaRectanguloLayout.setVerticalGroup(
             pnlGraficaRectanguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         jLabel21.setText("PERIMETRO");
@@ -378,7 +378,7 @@ public class FrameFigura extends javax.swing.JFrame {
                 .addGroup(panelRectanguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPerimetroRectangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRectanguloLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlGraficaRectangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -389,17 +389,17 @@ public class FrameFigura extends javax.swing.JFrame {
 
         pnlGraficaTriangulo.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaTriangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        pnlGraficaTriangulo.setPreferredSize(new java.awt.Dimension(510, 510));
+        pnlGraficaTriangulo.setPreferredSize(new java.awt.Dimension(520, 520));
 
         javax.swing.GroupLayout pnlGraficaTrianguloLayout = new javax.swing.GroupLayout(pnlGraficaTriangulo);
         pnlGraficaTriangulo.setLayout(pnlGraficaTrianguloLayout);
         pnlGraficaTrianguloLayout.setHorizontalGroup(
             pnlGraficaTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
         pnlGraficaTrianguloLayout.setVerticalGroup(
             pnlGraficaTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         jLabel13.setText("   X");
@@ -516,7 +516,7 @@ public class FrameFigura extends javax.swing.JFrame {
                 .addGroup(panelTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTipoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTrianguloLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlGraficaTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -529,7 +529,7 @@ public class FrameFigura extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedPanel)
+            .addComponent(tabbedPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -546,49 +546,104 @@ public class FrameFigura extends javax.swing.JFrame {
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
         // TODO add your handling code here:
         //Dibuja los ejes del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 10, 500);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 500, 510, 500);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 10, 10, 510);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 510, 510, 510);
         //Dibuja las flechas del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 15, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 5, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 495);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 505);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 0, 15, 5);
+        pnlGraficaCuadrado.getGraphics().drawLine(10, 0, 5, 5);
+        pnlGraficaCuadrado.getGraphics().drawLine(520, 510, 515, 505);
+        pnlGraficaCuadrado.getGraphics().drawLine(520, 510, 515, 515);
+
+        //Dibuja la escala del plano cartesiano
+        for (int i = 1; i <= 10; i++) {
+            if (i == 1) {
+
+                pnlGraficaCuadrado.getGraphics().drawLine(0, 10, 20, 10);
+            }
+            
+            if(i!=10)
+            pnlGraficaCuadrado.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+            pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
+        }
+
+        if (txtCuadradoX1.getText().trim().length() != 0 ) {
+            byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
+            byte[] coordenada4 = {Byte.parseByte(txtCuadradoX4.getText()), Byte.parseByte(txtCuadradoY4.getText())};
+            Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString());
+
+            cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+        } else {
+            JOptionPane.showMessageDialog(panelCuadrado, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnGraficarCuadradoActionPerformed
 
     private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
         //Dibuja los ejes del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 10, 500);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 500, 510, 500);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 10, 10, 510);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 510, 510, 510);
         //Dibuja las flechas del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 15, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 5, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 495);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 505);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 0, 15, 5);
+        pnlGraficaRectangulo.getGraphics().drawLine(10, 0, 5, 5);
+        pnlGraficaRectangulo.getGraphics().drawLine(520, 510, 515, 505);
+        pnlGraficaRectangulo.getGraphics().drawLine(520, 510, 515, 515);
+
+        //Dibuja la escala del plano cartesiano
+        for (int i = 1; i <= 10; i++) {
+            if (i == 1) {
+                pnlGraficaRectangulo.getGraphics().drawLine(0, 10, 20, 10);
+            }
+            pnlGraficaRectangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
+            pnlGraficaRectangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+        }
+       
+        if (txtRectanguloX1.getText().trim().length() != 0 ) {
+            byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
+            byte[] coordenada4 = {Byte.parseByte(txtRectanguloX4.getText()), Byte.parseByte(txtRectanguloY4.getText())};
+            Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
+
+            cuadrado.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+        } else {
+            JOptionPane.showMessageDialog(panelRectangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnGraficarRectanguloActionPerformed
 
     private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
         // TODO add your handling code here:
         //Dibuja los ejes del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 10, 500);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 500, 510, 500);
+        pnlGraficaTriangulo.getGraphics().drawLine(10, 10, 10, 510);
+        pnlGraficaTriangulo.getGraphics().drawLine(10, 510, 510, 510);
         //Dibuja las flechas del plano
         pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 15, 5);
         pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 5, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 495);
-        pnlGraficaTriangulo.getGraphics().drawLine(510, 500, 505, 505);
-        
-        if (txtTrianguloX1.getText().trim().length() != 0){
+        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 505);
+        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 515);
+
+        for (int i = 1; i <= 10; i++) {
+            if (i == 1) {
+                pnlGraficaTriangulo.getGraphics().drawLine(0, 10, 20, 10);
+
+            }
+            pnlGraficaTriangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
+            pnlGraficaTriangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+        }
+
+        if (txtTrianguloX1.getText().trim().length() != 0) {
             byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
-            
+
             triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
-                JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
 
