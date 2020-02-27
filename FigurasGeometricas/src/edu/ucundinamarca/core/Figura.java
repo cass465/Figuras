@@ -17,8 +17,8 @@ public class Figura {
     private byte[] coordenada1;
     private byte[] coordenada2;
     private byte[] coordenada3;
-    private byte area;
-    private byte perimetro;
+    private float area;
+    private float perimetro;
     private String color;
 
     public Figura(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, String color) {
@@ -62,6 +62,21 @@ public class Figura {
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 3);
     }
 
+    public void hallarArea(float base, float altura){
+        this.area = (base * altura)/2;
+    }
+
+    public void hallarPerimetro(float lado1, float lado2, float lado3){
+        this.perimetro = lado1 + lado2 + lado3;
+    }
+    public float getArea() {
+        return area;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+    
     public String getColor() {
         return color;
     }
