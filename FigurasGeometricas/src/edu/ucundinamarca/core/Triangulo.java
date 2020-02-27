@@ -11,7 +11,7 @@ package edu.ucundinamarca.core;
  */
 public class Triangulo extends Figura{
 
-    public Triangulo(float[] coordenada1, float[] coordenada2, float[] coordenada3, String color) {
+    public Triangulo(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, String color) {
         super(coordenada1, coordenada2, coordenada3, color);
     }
 }
