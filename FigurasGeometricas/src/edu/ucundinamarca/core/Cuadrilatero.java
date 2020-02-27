@@ -48,7 +48,7 @@ public class Cuadrilatero extends Figura {
         graficador.drawLine(coordenada2[0]*50+10, 500-coordenada2[1]*50, coordenada3[0]*50+10, 500-coordenada3[1]*50);
         graficador.drawLine(coordenada3[0]*50+10, 500-coordenada3[1]*50, coordenada1[0]*50+10, 500-coordenada1[1]*50);*/
         
-        int[] xCoordenadas = {coordenada1[0]*50+10, coordenada2[0]*50+10, coordenada3[1]*50+10, coordenada4[0]*50+10};
+        int[] xCoordenadas = {coordenada1[0]*50+10, coordenada2[0]*50+10, coordenada3[0]*50+10, coordenada4[0]*50+10};
         int[] yCoordenadas = {510-coordenada1[1]*50, 510-coordenada2[1]*50, 510-coordenada3[1]*50, 510-coordenada4[1]*50};
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 4);
     }
