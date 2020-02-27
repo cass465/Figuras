@@ -31,8 +31,28 @@ public class Figura {
         return false;
     }
     
-    public void trazarFigura(Graphics graficador, float coordenada1[], float coordenada2[], float coordenada3[], String color){
-        graficador.setColor(Color.red);
+    public void trazarFigura(Graphics graficador, float coordenada1[], float coordenada2[], float coordenada3[]){
+        switch(this.color){
+            case "ROJO":
+                graficador.setColor(Color.RED);
+                break;
+            case "VERDE":
+                graficador.setColor(Color.GREEN);
+                break;
+            case "AZUL":
+                graficador.setColor(Color.BLUE);
+                break;
+            case "AMARILLO":
+                graficador.setColor(Color.YELLOW);
+                break;
+            case "NEGRO":
+                graficador.setColor(Color.BLACK);
+                break;
+            default:
+                graficador.setColor(Color.RED);
+                break;
+        }
+        
         graficador.drawLine((int)coordenada1[0]*50+10, 500-(int)coordenada1[1]*50, (int)coordenada2[0]*50+10, 500-(int)coordenada2[1]*50);
         graficador.drawLine((int)coordenada2[0]*50+10, 500-(int)coordenada2[1]*50, (int)coordenada3[0]*50+10, 500-(int)coordenada3[1]*50);
         graficador.drawLine((int)coordenada3[0]*50+10, 500-(int)coordenada3[1]*50, (int)coordenada1[0]*50+10, 500-(int)coordenada1[1]*50);
