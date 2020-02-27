@@ -21,6 +21,8 @@ public class FrameFigura extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("FIGURAS");
+        
+      
     }
 
     /**
@@ -32,7 +34,7 @@ public class FrameFigura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabbedPanel = new javax.swing.JTabbedPane();
         panelCuadrado = new javax.swing.JPanel();
         txtCuadradoY3 = new javax.swing.JTextField();
         txtCuadradoX4 = new javax.swing.JTextField();
@@ -243,7 +245,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         pnlGraficaCuadrado.getAccessibleContext().setAccessibleDescription("");
 
-        jTabbedPane1.addTab("CUADRADO", panelCuadrado);
+        tabbedPanel.addTab("CUADRADO", panelCuadrado);
 
         jLabel1.setText("   X");
 
@@ -383,7 +385,7 @@ public class FrameFigura extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("RECTANGULO", panelRectangulo);
+        tabbedPanel.addTab("RECTANGULO", panelRectangulo);
 
         pnlGraficaTriangulo.setBackground(new java.awt.Color(204, 255, 204));
         pnlGraficaTriangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -521,22 +523,22 @@ public class FrameFigura extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("TRIANGULO", panelTriangulo);
+        tabbedPanel.addTab("TRIANGULO", panelTriangulo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabbedPanel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1))
+                .addComponent(tabbedPanel))
         );
 
-        jTabbedPane1.getAccessibleContext().setAccessibleName("TRIANGULO");
+        tabbedPanel.getAccessibleContext().setAccessibleName("TRIANGULO");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -622,7 +624,6 @@ public class FrameFigura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAreaCuadrado;
     private javax.swing.JLabel lblAreaRectangulo;
     private javax.swing.JLabel lblAreaTriangulo;
@@ -636,6 +637,7 @@ public class FrameFigura extends javax.swing.JFrame {
     private javax.swing.JPanel pnlGraficaCuadrado;
     private javax.swing.JPanel pnlGraficaRectangulo;
     private javax.swing.JPanel pnlGraficaTriangulo;
+    private javax.swing.JTabbedPane tabbedPanel;
     private javax.swing.JTextField txtCuadradoX1;
     private javax.swing.JTextField txtCuadradoX2;
     private javax.swing.JTextField txtCuadradoX3;
