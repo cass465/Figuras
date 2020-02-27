@@ -31,7 +31,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="tabbedPanel" max="32767" attributes="0"/>
           </Group>
@@ -122,7 +122,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="pnlGraficaCuadrado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -369,7 +369,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="pnlGraficaRectangulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -561,26 +561,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel23" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jLabel24" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAreaTriangulo" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="lblPerimetroTriangulo" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                              <Component id="btnGraficarTriangulo" min="-2" pref="94" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel25" min="-2" pref="74" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblTipoTriangulo" min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="colorTrianguloBox" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jLabel15" alignment="1" pref="121" max="32767" attributes="0"/>
@@ -612,10 +592,19 @@
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="tipoTrianguloLabel" max="32767" attributes="0"/>
+                              <Component id="perimetroTrianguloLabel" max="32767" attributes="0"/>
+                              <Component id="areaTrianguloLabel" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="btnGraficarTriangulo" min="-2" pref="94" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="pnlGraficaTriangulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -650,21 +639,20 @@
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btnGraficarTriangulo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblAreaTriangulo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="jLabel24" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="areaTrianguloLabel" min="-2" pref="23" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel23" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="lblPerimetroTriangulo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="perimetroTrianguloLabel" min="-2" pref="23" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< Updated upstream
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel25" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="lblTipoTriangulo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="200" max="32767" attributes="0"/>
+=======
+                      <Component id="tipoTrianguloLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace pref="190" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -742,19 +730,15 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtTrianguloX3">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblPerimetroTriangulo">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel23">
+            <Component class="javax.swing.JLabel" name="perimetroTrianguloLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="PERIMETRO"/>
+                <Property name="text" type="java.lang.String" value="PERIMETRO:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel24">
+            <Component class="javax.swing.JLabel" name="areaTrianguloLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="AREA"/>
+                <Property name="text" type="java.lang.String" value="AREA:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblAreaTriangulo">
             </Component>
             <Component class="javax.swing.JButton" name="btnGraficarTriangulo">
               <Properties>
@@ -764,11 +748,9 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGraficarTrianguloActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblTipoTriangulo">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel25">
+            <Component class="javax.swing.JLabel" name="tipoTrianguloLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="TIPO"/>
+                <Property name="text" type="java.lang.String" value="TIPO:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="colorTrianguloBox">

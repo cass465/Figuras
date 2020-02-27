@@ -17,8 +17,8 @@ public class Figura {
     private byte[] coordenada1;
     private byte[] coordenada2;
     private byte[] coordenada3;
-    private byte area;
-    private byte perimetro;
+    private float area;
+    private float perimetro;
     private String color;
 
     public Figura(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, String color) {
@@ -53,6 +53,7 @@ public class Figura {
                 graficador.setColor(Color.ORANGE);
                 break;
         }
+<<<<<<< Updated upstream
 
         /*graficador.drawLine(coordenada1[0]*50+10, 500-(coordenada1[1]*50), coordenada2[0]*50+10, 500-coordenada2[1]*50);
          graficador.drawLine(coordenada2[0]*50+10, 500-coordenada2[1]*50, coordenada3[0]*50+10, 500-coordenada3[1]*50);
@@ -66,4 +67,26 @@ public class Figura {
         return color;
     }
 
+=======
+        
+        int[] xCoordenadas = {coordenada1[0]*50+10, coordenada2[0]*50+10, coordenada3[0]*50+10};
+        int[] yCoordenadas = {500-coordenada1[1]*50, 500-coordenada2[1]*50, 500-coordenada3[1]*50};
+        graficador.fillPolygon(xCoordenadas, yCoordenadas, 3);
+    }
+    
+    public void hallarArea(float base, float altura){
+        this.area = (base * altura)/2;
+    }
+
+    public void hallarPerimetro(float lado1, float lado2, float lado3){
+        this.perimetro = lado1 + lado2 + lado3;
+    }
+    public float getArea() {
+        return area;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+>>>>>>> Stashed changes
 }
