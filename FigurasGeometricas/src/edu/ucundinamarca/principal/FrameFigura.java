@@ -21,6 +21,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     public FrameFigura() {
         initComponents();
+        this.setResizable(false);
         setLocationRelativeTo(null);
         setTitle("FIGURAS");
 
@@ -100,6 +101,7 @@ public class FrameFigura extends javax.swing.JFrame {
         colorTrianguloBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(820, 620));
 
         txtCuadradoY3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -690,7 +692,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
         }
 
-        if (txtCuadradoX1.getText().trim().length() != 0) {
+        if (this.validarCamposLlenosCuadrado()==true) {
             byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
@@ -731,7 +733,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaRectangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
 
-        if (txtRectanguloX1.getText().trim().length() != 0) {
+        if (this.validarCamposLlenosRectangulo()) {
             byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
@@ -775,7 +777,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaTriangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
 
-        if (txtTrianguloX1.getText().trim().length() != 0) {
+        if (this.validarCamposLlenosTriangulo()) {
             byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
@@ -796,6 +798,53 @@ public class FrameFigura extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
+
+    private Boolean validarCamposLlenosTriangulo() {
+
+        if (txtTrianguloX1.getText().trim().length() == 0
+                || txtTrianguloX2.getText().trim().length() == 0
+                || txtTrianguloX3.getText().trim().length() == 0
+                || txtTrianguloY1.getText().trim().length() == 0
+                || txtTrianguloY2.getText().trim().length() == 0
+                || txtTrianguloY3.getText().trim().length() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    private Boolean validarCamposLlenosCuadrado() {
+
+        if (txtCuadradoX1.getText().trim().length() == 0
+                || txtCuadradoX2.getText().trim().length() == 0
+                || txtCuadradoX3.getText().trim().length() == 0
+                || txtCuadradoX4.getText().trim().length() == 0
+                || txtCuadradoY1.getText().trim().length() == 0
+                || txtCuadradoY2.getText().trim().length() == 0
+                || txtCuadradoY3.getText().trim().length() == 0
+                || txtCuadradoY4.getText().trim().length() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+     private Boolean validarCamposLlenosRectangulo() {
+
+        if (txtRectanguloX1.getText().trim().length() == 0
+                || txtRectanguloX2.getText().trim().length() == 0
+                || txtRectanguloX3.getText().trim().length() == 0
+                || txtRectanguloX4.getText().trim().length() == 0
+                || txtRectanguloY1.getText().trim().length() == 0
+                || txtRectanguloY2.getText().trim().length() == 0
+                || txtRectanguloY3.getText().trim().length() == 0
+                || txtRectanguloY4.getText().trim().length() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     private void validarCampos(java.awt.event.KeyEvent evt, javax.swing.JTextField text) {
         char caracter = evt.getKeyChar();
         //Validar que no sea una letra o , o .
@@ -815,6 +864,7 @@ public class FrameFigura extends javax.swing.JFrame {
         }
 
     }
+
     private void txtCuadradoX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX1KeyTyped
 
         this.validarCampos(evt, txtCuadradoX1);
