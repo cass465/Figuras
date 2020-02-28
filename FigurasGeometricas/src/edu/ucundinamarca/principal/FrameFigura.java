@@ -669,6 +669,34 @@ public class FrameFigura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
+        this.graficarPlanoCartesianoCuadro();
+        if (this.validarCamposLlenosCuadrado() == true) {
+            byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
+            byte[] coordenada4 = {Byte.parseByte(txtCuadradoX4.getText()), Byte.parseByte(txtCuadradoY4.getText())};
+
+            Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString());
+            if (cuadrado.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
+                cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+                cuadrado.calcularLado1(coordenada1, coordenada2);
+                //Se halla el Area y el perimetro
+                lblAreaCuadrado.setText(cuadrado.hallarArea() + "");
+                lblPerimetroCuadrado.setText(cuadrado.hallarPerimetro() + "");
+
+                //panelCuadrado.repaint();
+                //pnlGraficaCuadrado.repaint();
+            } else {
+                JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(panelCuadrado, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnGraficarCuadradoActionPerformed
+
+    private void graficarPlanoCartesianoCuadro() {
         // TODO add your handling code here:
         //Dibuja los ejes del plano
         pnlGraficaCuadrado.getGraphics().drawLine(10, 10, 10, 510);
@@ -678,47 +706,49 @@ public class FrameFigura extends javax.swing.JFrame {
         pnlGraficaCuadrado.getGraphics().drawLine(10, 0, 5, 5);
         pnlGraficaCuadrado.getGraphics().drawLine(520, 510, 515, 505);
         pnlGraficaCuadrado.getGraphics().drawLine(520, 510, 515, 515);
-
         //Dibuja la escala del plano cartesiano
         for (int i = 1; i <= 10; i++) {
             if (i == 1) {
 
                 pnlGraficaCuadrado.getGraphics().drawLine(0, 10, 20, 10);
             }
-
             if (i != 10) {
                 pnlGraficaCuadrado.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
             }
             pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
         }
 
-        if (this.validarCamposLlenosCuadrado() == true) {
-            byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
-            byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
-            byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
-            byte[] coordenada4 = {Byte.parseByte(txtCuadradoX4.getText()), Byte.parseByte(txtCuadradoY4.getText())};
+    }
 
-            Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString());
+    private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
 
-            if (cuadrado.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
-                cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
-                cuadrado.calcularLado1(coordenada1, coordenada2);
+        if (this.validarCamposLlenosRectangulo()) {
+            byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
+            byte[] coordenada4 = {Byte.parseByte(txtRectanguloX4.getText()), Byte.parseByte(txtRectanguloY4.getText())};
+
+            Rectangulo rectangulo = new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
+
+            if (rectangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
+                rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+                rectangulo.calcularLado1(coordenada1, coordenada2);
+                rectangulo.calcularLado2(coordenada2, coordenada3);
                 //Se halla el Area y el perimetro
-                lblAreaCuadrado.setText(cuadrado.hallarArea()+"");
-                lblPerimetroCuadrado.setText(cuadrado.hallarPerimetro()+"");
+                lblAreaRectangulo.setText(rectangulo.hallarArea() + "");
+                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro() + "");
             } else {
-                JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
+                JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
             }
 
         } else {
-            JOptionPane.showMessageDialog(panelCuadrado, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+            JOptionPane.showMessageDialog(panelRectangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnGraficarCuadradoActionPerformed
+    }//GEN-LAST:event_btnGraficarRectanguloActionPerformed
 
-    private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
-        // TODO add your handling code here:
+    private void graficarPlanoCartesianoRectangulo() {
         //Dibuja los ejes del plano
         pnlGraficaRectangulo.getGraphics().drawLine(10, 10, 10, 510);
         pnlGraficaRectangulo.getGraphics().drawLine(10, 510, 510, 510);
@@ -736,35 +766,38 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaRectangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
             pnlGraficaRectangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
-
-        if (this.validarCamposLlenosRectangulo()) {
-            byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
-            byte[] coordenada2 = {Byte.parseByte(txtRectanguloX2.getText()), Byte.parseByte(txtRectanguloY2.getText())};
-            byte[] coordenada3 = {Byte.parseByte(txtRectanguloX3.getText()), Byte.parseByte(txtRectanguloY3.getText())};
-            byte[] coordenada4 = {Byte.parseByte(txtRectanguloX4.getText()), Byte.parseByte(txtRectanguloY4.getText())};
-
-            Rectangulo rectangulo = new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
-
-            if (rectangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
-                rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
-                rectangulo.calcularLado1(coordenada1, coordenada2);
-                rectangulo.calcularLado2(coordenada2, coordenada3);
-                //Se halla el Area y el perimetro
-                lblAreaRectangulo.setText(rectangulo.hallarArea()+"");
-                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro()+"");
-            } else {
-                JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(panelRectangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnGraficarRectanguloActionPerformed
+    }
 
     private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
-        // TODO add your handling code here:
+
+        if (this.validarCamposLlenosTriangulo()) {
+            byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
+            byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
+            byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
+            Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
+
+            if (triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)) {
+                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
+                triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
+                triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
+                triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
+
+                areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
+                perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
+                tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
+            } else {
+                JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
+
+    private void graficarPlanoCartesianoTriangulo() {
         areaTrianguloLabel.setText("AREA:");
         perimetroTrianguloLabel.setText("PERIMETRO:");
         tipoTrianguloLabel.setText("TIPO:");
@@ -785,34 +818,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaTriangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
             pnlGraficaTriangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
-
-        if (this.validarCamposLlenosTriangulo()) {
-            byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
-            byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
-            byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
-            Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
-
-            if (triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)) {
-                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
-                triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
-                triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-                triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-                triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
-                triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
-
-                areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
-                perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
-                tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
-            }
-            else{
-                JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
-                    JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
+    }
 
     private Boolean validarCamposLlenosTriangulo() {
 
@@ -871,7 +877,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         }
         try {
-            if (caracter != evt.VK_BACK_SPACE && caracter != evt.VK_ENTER && Integer.parseInt(text.getText() + caracter) > 10  ) {
+            if (caracter != evt.VK_BACK_SPACE && caracter != evt.VK_ENTER && Integer.parseInt(text.getText() + caracter) > 10) {
                 evt.consume();
                 JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);

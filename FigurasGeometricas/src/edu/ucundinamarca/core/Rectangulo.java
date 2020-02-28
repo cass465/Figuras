@@ -7,16 +7,42 @@ package edu.ucundinamarca.core;
 
 /**
  *
- * @author YEISON
+ * @author YEISON 
+ * @see Clase hija de cudrilatero, figura rectangulo
+ * @version 1.0.0
  */
 public class Rectangulo extends Cuadrilatero {
-    
+
+    /**
+     * @see Lado 2 del rectangulo
+     */
     private float lado2;
-   
+
+    /**
+     * @author YEISON
+     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del cuadrilatero
+     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
+     * @param coordenada3,coordenadas X y Y que componen el tercer punto del cuadrilatero 
+     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @param color,color que tomara la figura en el plano cartesiano,
+     * @see Constructor de la clase
+     */
     public Rectangulo(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
-        super(coordenada1, coordenada2, coordenada3,coordenada4, color);        
+        super(coordenada1, coordenada2, coordenada3, coordenada4, color);
     }
-    
+
+    /**
+     * @author YEISON
+     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del rectangulo
+     * @param coordenada2,coordenadas X y Y que componen el segundo punto del rectangulo
+     * @param coordenada3,coordenadas X y Y que componen el tercer punto del  rectangulo
+     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del  rectangulo
+     * @return boolean (true, coordenadas correctas ; false, coordenadas
+     * incorrectas)
+     * @see Se sobreescribe el metodo para validar las coordenadas del
+     * rectangulo
+     */
+    @Override
     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
 
         if ((coordenada1[0] == coordenada2[0] && coordenada1[1] == coordenada2[1])
@@ -35,27 +61,45 @@ public class Rectangulo extends Cuadrilatero {
             return false;
         } else if (coordenada1[0] != coordenada4[0]) {
             return false;
-        } else if((coordenada1[0]+coordenada2[0]==coordenada2[1]+coordenada3[1])) {
+        } else if ((coordenada1[0] + coordenada2[0] == coordenada2[1] + coordenada3[1])) {
             return false;
-        }else {
+        } else {
             return true;
         }
 
     }
-    
-    @Override 
-     public float hallarArea() {
+
+    /**
+     * @author YEISON
+     * @see Metodo para hallar el area del rectangulo a partir de sus lados
+     * @return float (area)
+     */
+    @Override
+    public float hallarArea() {
 
         return (super.getLado1() * this.lado2);
 
     }
-     @Override 
-     public float hallarPerimetro() {
-        return ((super.getLado1() *2)+ (this.lado2*2));
+
+    /**
+     * @author YEISON
+     * @see Metodo para hallar el perimetro del rectangulo a partir de sus lados
+     * @return float (area)
+     */
+    @Override
+    public float hallarPerimetro() {
+        return ((super.getLado1() * 2) + (this.lado2 * 2));
     }
-     
-     public void calcularLado2(byte coordenada2[], byte coordenada3[]) {
-        this.lado2=((coordenada3[1] - coordenada2[1]));
+
+    /**
+     * @author YEISON
+     * @param coordenada2 ,coordenadas X y Y que componen el segundo punto del rectangulo
+     * @param coordenada3,coordenadas X y Y que componen el tercer punto del rectangulo
+     * @see Establece el valor del lado2 del rectangulo a apartir de dos
+     * coordenadas
+     */
+    public void calcularLado2(byte coordenada2[], byte coordenada3[]) {
+        this.lado2 = ((coordenada3[1] - coordenada2[1]));
 
     }
 }
