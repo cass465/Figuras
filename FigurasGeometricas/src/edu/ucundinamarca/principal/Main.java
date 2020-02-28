@@ -6,23 +6,27 @@
 package edu.ucundinamarca.principal;
 
 /**
+ * Clase Main que ejecuta el programa
  *
- * @author cass465
+ * @author Camilo Sanabria
+ * @version 1.0.0
  */
 public class Main {
 
     /**
+     * Metodo principal que arranca el programa
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-             new FrameFigura().setVisible(true);
-                
+                new FrameFigura().setVisible(true);
+
             }
         });
-        
+
     }
-    
+
 }
