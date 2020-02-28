@@ -9,42 +9,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
+ *
  * @author YEISON
- * @see Clase padre de cuadrado y rectangulo, clase hija de Figura
- * @version : 1.0.0
  */
 public class Cuadrilatero extends Figura {
 
-    /**
-     * @see Atributo que obtiene la cordenada 4 del cuadrilatero
-     */
     private byte[] coordenada4;
 
-    /**
-     * @author YEISON
-     *
-     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del cuadrilatero 
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del cuadrilatero
-     * @param color      ,color que tomara la figura en el plano cartesiano,
-     * @see Metodo constructor de la clase Cuadrilatero
-     */
     public Cuadrilatero(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
         super(coordenada1, coordenada2, coordenada3, color);
         this.coordenada4 = coordenada4;
     }
 
-    /**
-     * @author YEISON
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del cuadrilatero 
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del cuadrilatero
-     * @see Metodo para validar que las coordenadas ingresadas sean correctas
-     * @return bool (true para coodenadas correctas, false para coordenas
-     * incorrectas)
-     */
+    //valida las coordenadas del cuadrado
     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
 
         if ((coordenada1[0] == coordenada2[0] && coordenada1[1] == coordenada2[1])
@@ -71,16 +48,6 @@ public class Cuadrilatero extends Figura {
 
     }
 
-    /**
-     * @author YEISON
-     * @param graficador
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del cuadrilatero 
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del cuadrilatero
-     * @see Metodo utilizado para graficar la figura en el plano cartesiano
-     * segun las coordenadas enviadas
-     */
     public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[], byte coordenada4[]) {
         switch (super.getColor()) {
             case "ROJO":
@@ -111,32 +78,16 @@ public class Cuadrilatero extends Figura {
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 4);
     }
 
-    /**
-     * @author YEISON
-     * @see Metodo para hallar el area del cuadrilatero formado a partir de su lado
-     * @return float (area)
-     */
     public float hallarArea() {
 
         return (super.getLado1() * super.getLado1());
 
     }
 
-    /**
-     * @author YEISON
-     * @see Metodo para hallar el perimetro del cuadrilatero a partir de su lado
-     * @return float (perimetro)
-     */
     public float hallarPerimetro() {
         return (super.getLado1() * 4);
     }
 
-    /**
-     * @author YEISON
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
-     * @see Establece el valor del lado1 del cuadrilatero a partir de dos coordenadas
-     */
     public void calcularLado1(byte coordenada1[], byte coordenada2[]) {
         super.setLado1((coordenada2[0] - coordenada1[0]));
 
