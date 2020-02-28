@@ -692,7 +692,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
         }
 
-        if (this.validarCamposLlenosCuadrado()==true) {
+        if (this.validarCamposLlenosCuadrado() == true) {
             byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
@@ -702,6 +702,10 @@ public class FrameFigura extends javax.swing.JFrame {
 
             if (cuadrado.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
                 cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+                cuadrado.calcularLado1(coordenada1, coordenada2);
+                //Se halla el Area y el perimetro
+                lblAreaCuadrado.setText(cuadrado.hallarArea()+"");
+                lblPerimetroCuadrado.setText(cuadrado.hallarPerimetro()+"");
             } else {
                 JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -743,6 +747,11 @@ public class FrameFigura extends javax.swing.JFrame {
 
             if (rectangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
                 rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+                rectangulo.calcularLado1(coordenada1, coordenada2);
+                rectangulo.calcularLado2(coordenada2, coordenada3);
+                //Se halla el Area y el perimetro
+                lblAreaRectangulo.setText(rectangulo.hallarArea()+"");
+                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro()+"");
             } else {
                 JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -812,7 +821,7 @@ public class FrameFigura extends javax.swing.JFrame {
             return true;
         }
     }
-    
+
     private Boolean validarCamposLlenosCuadrado() {
 
         if (txtCuadradoX1.getText().trim().length() == 0
@@ -828,8 +837,8 @@ public class FrameFigura extends javax.swing.JFrame {
             return true;
         }
     }
-    
-     private Boolean validarCamposLlenosRectangulo() {
+
+    private Boolean validarCamposLlenosRectangulo() {
 
         if (txtRectanguloX1.getText().trim().length() == 0
                 || txtRectanguloX2.getText().trim().length() == 0
@@ -855,13 +864,17 @@ public class FrameFigura extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
 
         }
-        //Validar que sea un numero entre 1 y 10
-        if (Integer.parseInt(text.getText() + caracter) > 10) {
-            evt.consume();
+        try {
+            if (caracter != evt.VK_BACK_SPACE && caracter != evt.VK_ENTER && Integer.parseInt(text.getText() + caracter) > 10  ) {
+                evt.consume();
+                JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10", "MENSAJE DEL SISTEMA",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
-
         }
+        //Validar que sea un numero entre 1 y 10
 
     }
 

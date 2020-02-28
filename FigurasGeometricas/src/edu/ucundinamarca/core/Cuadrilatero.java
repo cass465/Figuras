@@ -40,9 +40,9 @@ public class Cuadrilatero extends Figura {
             return false;
         } else if (coordenada1[0] != coordenada4[0]) {
             return false;
-        } else if((coordenada1[0]+coordenada2[0]!=coordenada2[1]+coordenada3[1])) {
+        } else if ((coordenada1[0] + coordenada2[0] != coordenada2[1] + coordenada3[1])) {
             return false;
-        }else {
+        } else {
             return true;
         }
 
@@ -77,4 +77,20 @@ public class Cuadrilatero extends Figura {
         int[] yCoordenadas = {510 - coordenada1[1] * 50, 510 - coordenada2[1] * 50, 510 - coordenada3[1] * 50, 510 - coordenada4[1] * 50};
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 4);
     }
+
+    public float hallarArea() {
+
+        return (super.getLado1() * super.getLado1());
+
+    }
+
+    public float hallarPerimetro() {
+        return (super.getLado1() * 4);
+    }
+
+    public void calcularLado1(byte coordenada1[], byte coordenada2[]) {
+        super.setLado1((coordenada2[0] - coordenada1[0]));
+
+    }
+
 }
