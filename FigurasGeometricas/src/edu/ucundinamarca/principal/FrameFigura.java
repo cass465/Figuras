@@ -11,13 +11,15 @@ import edu.ucundinamarca.core.Rectangulo;
 import javax.swing.JOptionPane;
 
 /**
+ * Ventana de entorno grafico de la aplicacion
  *
- * @author YEISON
+ * @author Yeison Cifuentes
+ * @version 1.0.0
  */
 public class FrameFigura extends javax.swing.JFrame {
 
     /**
-     * Creates new form JFigura
+     * Constructor de la clase
      */
     public FrameFigura() {
         initComponents();
@@ -668,6 +670,11 @@ public class FrameFigura extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento que se activa al presionar el boton que grafica un cuadrado
+     *
+     * @param evt evento que lo activa
+     */
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
         this.graficarPlanoCartesianoCuadro();
         if (this.validarCamposLlenosCuadrado() == true) {
@@ -683,9 +690,6 @@ public class FrameFigura extends javax.swing.JFrame {
                 //Se halla el Area y el perimetro
                 lblAreaCuadrado.setText(cuadrado.hallarArea() + "");
                 lblPerimetroCuadrado.setText(cuadrado.hallarPerimetro() + "");
-
-                //panelCuadrado.repaint();
-                //pnlGraficaCuadrado.repaint();
             } else {
                 JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -696,7 +700,12 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGraficarCuadradoActionPerformed
 
-    private void graficarPlanoCartesianoCuadro() {
+    /**
+     * Evento que se activa al presionar el boton que grafica un rectangulo
+     *
+     * @param evt
+     */
+    private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
         //Dibuja los ejes del plano
         pnlGraficaCuadrado.getGraphics().drawLine(10, 10, 10, 510);
@@ -748,7 +757,16 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGraficarRectanguloActionPerformed
 
-    private void graficarPlanoCartesianoRectangulo() {
+    /**
+     * Evento que se activa al presionar el boton que grafica un triangulo
+     *
+     * @param evt
+     */
+    private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
+        // TODO add your handling code here:
+        areaTrianguloLabel.setText("AREA:");
+        perimetroTrianguloLabel.setText("PERIMETRO:");
+        tipoTrianguloLabel.setText("TIPO:");
         //Dibuja los ejes del plano
         pnlGraficaRectangulo.getGraphics().drawLine(10, 10, 10, 510);
         pnlGraficaRectangulo.getGraphics().drawLine(10, 510, 510, 510);
@@ -797,29 +815,12 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGraficarTrianguloActionPerformed
 
-    private void graficarPlanoCartesianoTriangulo() {
-        areaTrianguloLabel.setText("AREA:");
-        perimetroTrianguloLabel.setText("PERIMETRO:");
-        tipoTrianguloLabel.setText("TIPO:");
-        //Dibuja los ejes del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 10, 10, 510);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 510, 510, 510);
-        //Dibuja las flechas del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 15, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 5, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 505);
-        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 515);
-
-        for (int i = 1; i <= 10; i++) {
-            if (i == 1) {
-                pnlGraficaTriangulo.getGraphics().drawLine(0, 10, 20, 10);
-
-            }
-            pnlGraficaTriangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
-            pnlGraficaTriangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
-        }
-    }
-
+    /**
+     * Metodo que valida si los campos de texto para graficar un triangulo estan
+     * completos
+     *
+     * @return indica si la validacion es correcta o no
+     */
     private Boolean validarCamposLlenosTriangulo() {
 
         if (txtTrianguloX1.getText().trim().length() == 0
@@ -834,6 +835,12 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Metodo que valida si los campos de texto para graficar un cuadrado estan
+     * completos
+     *
+     * @return indica si la validacion es correcta o no
+     */
     private Boolean validarCamposLlenosCuadrado() {
 
         if (txtCuadradoX1.getText().trim().length() == 0
@@ -850,6 +857,12 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Metodo que valida si los campos de texto para graficar un rectangulo
+     * estan completos
+     *
+     * @return indica si la validacion es correcta o no
+     */
     private Boolean validarCamposLlenosRectangulo() {
 
         if (txtRectanguloX1.getText().trim().length() == 0
@@ -866,6 +879,13 @@ public class FrameFigura extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Metodo que valida si los campos de texto estan entre 1 y 10, ademas de no
+     * ser otro tipo de caracter
+     *
+     * @param evt evento que lo activa
+     * @param text campo de texto que lo activa
+     */
     private void validarCampos(java.awt.event.KeyEvent evt, javax.swing.JTextField text) {
         char caracter = evt.getKeyChar();
         //Validar que no sea una letra o , o .
@@ -890,110 +910,220 @@ public class FrameFigura extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX1KeyTyped
 
         this.validarCampos(evt, txtCuadradoX1);
     }//GEN-LAST:event_txtCuadradoX1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoX2);
     }//GEN-LAST:event_txtCuadradoX2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoX3);
     }//GEN-LAST:event_txtCuadradoX3KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoX4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoX4KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoX4);
     }//GEN-LAST:event_txtCuadradoX4KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY1KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoY1);
     }//GEN-LAST:event_txtCuadradoY1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoY2);
     }//GEN-LAST:event_txtCuadradoY2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoY3);
     }//GEN-LAST:event_txtCuadradoY3KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtCuadradoY4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuadradoY4KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtCuadradoY4);
     }//GEN-LAST:event_txtCuadradoY4KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX1KeyTyped
         this.validarCampos(evt, txtRectanguloX1);
     }//GEN-LAST:event_txtRectanguloX1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloX2);
     }//GEN-LAST:event_txtRectanguloX2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloX3);
     }//GEN-LAST:event_txtRectanguloX3KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloX4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloX4KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloX4);
     }//GEN-LAST:event_txtRectanguloX4KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY1KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloY1);
     }//GEN-LAST:event_txtRectanguloY1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloY2);
     }//GEN-LAST:event_txtRectanguloY2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloY3);
     }//GEN-LAST:event_txtRectanguloY3KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtRectanguloY4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRectanguloY4KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtRectanguloY4);
     }//GEN-LAST:event_txtRectanguloY4KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX1KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloX1);
     }//GEN-LAST:event_txtTrianguloX1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloX2);
     }//GEN-LAST:event_txtTrianguloX2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloX3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloX3);
     }//GEN-LAST:event_txtTrianguloX3KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloY1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY1KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloY1);
     }//GEN-LAST:event_txtTrianguloY1KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloY2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY2KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloY2);
     }//GEN-LAST:event_txtTrianguloY2KeyTyped
 
+    /**
+     * Metodo que se activa cuando se ingresa una entrada al campo de texto
+     *
+     * @param evt evento que lo avtiva
+     */
     private void txtTrianguloY3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTrianguloY3KeyTyped
         // TODO add your handling code here:
         this.validarCampos(evt, txtTrianguloY3);
