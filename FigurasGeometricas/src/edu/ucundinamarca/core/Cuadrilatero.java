@@ -17,7 +17,7 @@ import java.awt.Graphics;
 public class Cuadrilatero extends Figura {
 
     /**
-     * @see Atributo que obtiene la cordenada 4 del cuadrilatero
+     * Atributo que obtiene la cordenada 4 del cuadrilatero
      */
     private byte[] coordenada4;
 

@@ -14,27 +14,27 @@ package edu.ucundinamarca.core;
 public class Triangulo extends Figura {
 
     /**
-     * @see Segundo lado del triangulo
+     * Segundo lado del triangulo
      */
     private float lado2;
 
     /**
-     * @see Tercer lado del triangulo
+     * Tercer lado del triangulo
      */
     private float lado3;
 
     /**
-     * @see Base del triangulo
+     *  Base del triangulo
      */
     private float base;
 
     /**
-     * @see Altura del triangulo
+     *  Altura del triangulo
      */
     private float altura;
 
     /**
-     * @see Tipo del triangulo segun sus caracteristicas
+     *  Tipo del triangulo segun sus caracteristicas
      */
     private String tipo;
 

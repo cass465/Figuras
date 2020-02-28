@@ -17,37 +17,37 @@ import java.awt.Graphics;
 public class Figura {
 
     /**
-     * @see Primera coordenada x,y de la figura
+     * Primera coordenada x,y de la figura
      */
     private byte[] coordenada1;
 
     /**
-     * @see Segunda coordenada x,y de la figura
+     * Segunda coordenada x,y de la figura
      */
     private byte[] coordenada2;
 
     /**
-     * @see Tercera coordenada x,y de la figura
+     * ercera coordenada x,y de la figura
      */
     private byte[] coordenada3;
 
     /**
-     * @see Lado que comparten todas las figuras
+     * ado que comparten todas las figuras
      */
     private float lado1;
 
     /**
-     * @see Area de la figura
+     * rea de la figura
      */
     private float area;
 
     /**
-     * @see Perimetro de la figura
+     * erimetro de la figura
      */
     private float perimetro;
 
     /**
-     * @see Color de la figura
+     * Color de la figura
      */
     private String color;
 
