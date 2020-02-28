@@ -792,16 +792,22 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
 
-            triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
-            triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
-            triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-            triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-            triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
-            triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
+            if (triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)) {
+                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
+                triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
+                triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
+                triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
 
-            areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
-            perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
-            tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
+                areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
+                perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
+                tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
+            }
+            else{
+                JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
