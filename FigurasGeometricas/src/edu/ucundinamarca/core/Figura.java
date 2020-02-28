@@ -29,8 +29,29 @@ public class Figura {
         this.color = color;
     }
 
-    public boolean validarCoordenadas(float[] coordenada1, float[] coordenada2, float[] coordenada3) {
-        return false;
+    public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3) {
+        float lado1CatetoX = coordenada2[0]-coordenada1[0];
+        float lado1CatetoY = coordenada2[1]-coordenada1[1];
+        
+        float pendiente1 = 0;
+        if(lado1CatetoX != 0 && lado1CatetoY != 0){
+            pendiente1 = lado1CatetoY/lado1CatetoX;
+        }
+        
+        float lado2CatetoX = coordenada3[0]-coordenada1[0];
+        float lado2CatetoY = coordenada3[1]-coordenada1[1];
+        
+        float pendiente2 = 0;
+        if(lado2CatetoX != 0 && lado2CatetoY != 0){
+            pendiente2 = lado2CatetoY/lado2CatetoX;
+        }
+        
+        if(pendiente1 == pendiente2){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[]) {

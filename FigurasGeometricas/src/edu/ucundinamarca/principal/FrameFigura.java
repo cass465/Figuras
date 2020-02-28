@@ -782,7 +782,10 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
-
+            
+            if(triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)){
+                
+            }
             triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
             triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
             triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
