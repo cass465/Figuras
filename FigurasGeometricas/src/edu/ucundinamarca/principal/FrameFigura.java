@@ -692,7 +692,7 @@ public class FrameFigura extends javax.swing.JFrame {
             pnlGraficaCuadrado.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
         }
 
-        if (this.validarCamposLlenosCuadrado()==true) {
+        if (this.validarCamposLlenosCuadrado() == true) {
             byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
             byte[] coordenada2 = {Byte.parseByte(txtCuadradoX2.getText()), Byte.parseByte(txtCuadradoY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtCuadradoX3.getText()), Byte.parseByte(txtCuadradoY3.getText())};
@@ -782,20 +782,23 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada2 = {Byte.parseByte(txtTrianguloX2.getText()), Byte.parseByte(txtTrianguloY2.getText())};
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
-            
-            if(triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)){
-                
-            }
-            triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
-            triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
-            triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-            triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-            triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
-            triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
 
-            areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
-            perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
-            tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
+            if (triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)) {
+                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
+                triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
+                triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
+                triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
+                triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
+
+                areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
+                perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
+                tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
+            }
+            else{
+                JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
+                    JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
@@ -815,7 +818,7 @@ public class FrameFigura extends javax.swing.JFrame {
             return true;
         }
     }
-    
+
     private Boolean validarCamposLlenosCuadrado() {
 
         if (txtCuadradoX1.getText().trim().length() == 0
@@ -831,8 +834,8 @@ public class FrameFigura extends javax.swing.JFrame {
             return true;
         }
     }
-    
-     private Boolean validarCamposLlenosRectangulo() {
+
+    private Boolean validarCamposLlenosRectangulo() {
 
         if (txtRectanguloX1.getText().trim().length() == 0
                 || txtRectanguloX2.getText().trim().length() == 0
