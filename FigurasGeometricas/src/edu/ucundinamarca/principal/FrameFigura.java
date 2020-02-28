@@ -727,7 +727,7 @@ public class FrameFigura extends javax.swing.JFrame {
     /**
      * Evento que se activa al presionar el boton que grafica un rectangulo
      *
-     * @param evt
+     * @param evt evento que lo avtiva
      */
     private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
@@ -778,7 +778,7 @@ public class FrameFigura extends javax.swing.JFrame {
     /**
      * Evento que se activa al presionar el boton que grafica un triangulo
      *
-     * @param evt
+     * @param evt evento que lo avtiva
      */
     private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
         // TODO add your handling code here:
@@ -837,7 +837,7 @@ public class FrameFigura extends javax.swing.JFrame {
      *
      * @return indica si la validacion es correcta o no
      */
-    private Boolean validarCamposLlenosTriangulo() {
+    private boolean validarCamposLlenosTriangulo() {
 
         if (txtTrianguloX1.getText().trim().length() == 0
                 || txtTrianguloX2.getText().trim().length() == 0
@@ -857,7 +857,7 @@ public class FrameFigura extends javax.swing.JFrame {
      *
      * @return indica si la validacion es correcta o no
      */
-    private Boolean validarCamposLlenosCuadrado() {
+    private boolean validarCamposLlenosCuadrado() {
 
         if (txtCuadradoX1.getText().trim().length() == 0
                 || txtCuadradoX2.getText().trim().length() == 0
@@ -879,7 +879,7 @@ public class FrameFigura extends javax.swing.JFrame {
      *
      * @return indica si la validacion es correcta o no
      */
-    private Boolean validarCamposLlenosRectangulo() {
+    private boolean validarCamposLlenosRectangulo() {
 
         if (txtRectanguloX1.getText().trim().length() == 0
                 || txtRectanguloX2.getText().trim().length() == 0
