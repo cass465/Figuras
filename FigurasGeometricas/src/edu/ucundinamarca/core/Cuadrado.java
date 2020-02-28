@@ -18,13 +18,13 @@ public class Cuadrado extends Cuadrilatero {
      *
      * @author Yeison Cifuentes
      *
-     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2 ,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
-     * @param coordenada3 ,coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero
-     * @param coordenada4 ,coordenadas X y Y que componen el cuarto punto del
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del
+     * cuadrilatero 
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del
+     * cuadrilatero 
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del
+     * cuadrilatero 
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del
      * cuadrilatero
      * @param color, color que tomara la figura en el plano cartesiano
      */

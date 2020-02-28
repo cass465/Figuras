@@ -24,15 +24,11 @@ public class Cuadrilatero extends Figura {
     /**
      * Constructor de la clase Cuadrilatero
      *
-     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del
-     * cuadrilatero
-     * @param color ,color que tomara la figura en el plano cartesiano,
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @param color color que tomara la figura en el plano cartesiano
      */
     public Cuadrilatero(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
         super(coordenada1, coordenada2, coordenada3, color);
@@ -42,16 +38,11 @@ public class Cuadrilatero extends Figura {
     /**
      * Metodo para validar que las coordenadas ingresadas sean correctas
      *
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del
-     * cuadrilatero
-     * @return bool (true para coodenadas correctas, false para coordenas
-     * incorrectas)
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero 
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero 
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero 
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @return bool true para coodenadas correctas, false para coordenas incorrectas
      */
     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
 
@@ -83,15 +74,11 @@ public class Cuadrilatero extends Figura {
      * Metodo utilizado para graficar la figura en el plano cartesiano segun las
      * coordenadas enviadas
      *
-     * @param graficador
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del
-     * cuadrilatero
+     * @param graficador  permite graficar
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero 
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero 
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero 
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
      */
     public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[], byte coordenada4[]) {
         switch (super.getColor()) {
@@ -146,10 +133,8 @@ public class Cuadrilatero extends Figura {
     /**
      * Establece el valor del lado1 del cuadrilatero a partir de dos coordenadas
      *
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
+     * @param coordenada1,coordenadas X y Y que componen el primer punto del cuadrilatero
+     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
      */
     public void calcularLado1(byte coordenada1[], byte coordenada2[]) {
         super.setLado1((coordenada2[0] - coordenada1[0]));

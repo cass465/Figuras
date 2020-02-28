@@ -21,15 +21,11 @@ public class Rectangulo extends Cuadrilatero {
     /**
      * Constructor de la clase
      *
-     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del
-     * cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del
-     * cuadrilatero
-     * @param color,color que tomara la figura en el plano cartesiano,
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @param color color que tomara la figura en el plano cartesiano,
      */
     public Rectangulo(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
         super(coordenada1, coordenada2, coordenada3, coordenada4, color);
@@ -38,16 +34,11 @@ public class Rectangulo extends Cuadrilatero {
     /**
      * Se sobreescribe el metodo para validar las coordenadas del rectangulo
      *
-     * @param coordenada1 ,coordenadas X y Y que componen el primer punto del
-     * rectangulo
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
-     * rectangulo
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * rectangulo
-     * @param coordenada4,coordenadas X y Y que componen el cuarto punto del
-     * rectangulo
-     * @return boolean (true, coordenadas correctas ; false, coordenadas
-     * incorrectas)
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del rectangulo
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del rectangulo
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del rectangulo
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del rectangulo
+     * @return boolean true, coordenadas correctas ; false, coordenadas incorrectas
      */
     public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
 
@@ -100,10 +91,8 @@ public class Rectangulo extends Cuadrilatero {
     /**
      * Establece el valor del lado2 del rectangulo a apartir de dos coordenadas
      *
-     * @param coordenada2 ,coordenadas X y Y que componen el segundo punto del
-     * rectangulo
-     * @param coordenada3,coordenadas X y Y que componen el tercer punto del
-     * rectangulo
+     * @param coordenada2 ,coordenadas X y Y que componen el segundo punto del rectangulo
+     * @param coordenada3,coordenadas X y Y que componen el tercer punto del rectangulo
      */
     public void calcularLado2(byte coordenada2[], byte coordenada3[]) {
         this.lado2 = ((coordenada3[1] - coordenada2[1]));
