@@ -762,8 +762,8 @@ public class FrameFigura extends javax.swing.JFrame {
                 rectangulo.calcularLado1(coordenada1, coordenada2);
                 rectangulo.calcularLado2(coordenada2, coordenada3);
                 //Se halla el Area y el perimetro
-                lblAreaRectangulo.setText(rectangulo.hallarArea()+"");
-                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro()+"");
+                lblAreaRectangulo.setText(rectangulo.hallarArea() + "");
+                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro() + "");
             } else {
                 JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -820,10 +820,9 @@ public class FrameFigura extends javax.swing.JFrame {
                 areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
                 perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());
                 tipoTrianguloLabel.setText(tipoTrianguloLabel.getText() + " " + triangulo.getTipo());
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
-                    JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE TODOS LOS CAMPOS", "MENSAJE DEL SISTEMA",
@@ -913,7 +912,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         }
         try {
-            if (caracter != evt.VK_BACK_SPACE && caracter != evt.VK_ENTER && Integer.parseInt(text.getText() + caracter) > 10  ) {
+            if (caracter != evt.VK_BACK_SPACE && caracter != evt.VK_ENTER && Integer.parseInt(text.getText() + caracter) > 10) {
                 evt.consume();
                 JOptionPane.showMessageDialog(panelTriangulo, "DILIGENCIE SOLO NUMEROS ENTEROS ENTRE 1 Y 10", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
