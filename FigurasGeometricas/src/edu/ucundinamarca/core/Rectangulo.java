@@ -5,8 +5,6 @@
  */
 package edu.ucundinamarca.core;
 
-import java.awt.Graphics;
-
 /**
  * Clase hija de cudrilatero, figura rectangulo
  *
@@ -37,7 +35,6 @@ public class Rectangulo extends Cuadrilatero {
         super(coordenada1, coordenada2, coordenada3, coordenada4, color);
     }
 
-    
     /**
      * Establece el valor del lado2 del rectangulo a apartir de dos coordenadas
      *
@@ -52,9 +49,9 @@ public class Rectangulo extends Cuadrilatero {
     }
 
     /**
-     * Se sobreescribe el metodo para validar las coordenadas del rectangulo
+     * Metodo que valida que las coordenadas del rectangulo sean coherentes
      *
-     * @return boolean true, coordenadas correctas ; false, coordenadas
+     * @return boolean true, coordenadas correctas o false, coordenadas
      * incorrectas
      */
     @Override
@@ -82,15 +79,19 @@ public class Rectangulo extends Cuadrilatero {
         }
     }
 
+    /**
+     * Metodo que calcula el area del rectangulo
+     */
     @Override
     public void hallarArea() {
         super.setArea((super.getLado1() * this.lado2));
     }
 
+    /**
+     * Metodo que calcula el perimetro del rectangulo
+     */
     @Override
     public void hallarPerimetro() {
-        System.out.println(super.getLado1() * 2);
-        System.out.println(this.lado2 * 2);
         super.setPerimetro(((super.getLado1() * 2) + (this.lado2 * 2)));
     }
 }

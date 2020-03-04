@@ -5,8 +5,6 @@
  */
 package edu.ucundinamarca.core;
 
-import java.awt.Graphics;
-
 /**
  * Clase hija de cudrilatero, figura cuadrado
  *
@@ -17,8 +15,6 @@ public class Cuadrado extends Cuadrilatero {
 
     /**
      * Constructor de la clase
-     *
-     * @author Yeison Cifuentes
      *
      * @param coordenada1 coordenadas X y Y que componen el primer punto del
      * cuadrilatero
@@ -34,7 +30,13 @@ public class Cuadrado extends Cuadrilatero {
         super(coordenada1, coordenada2, coordenada3, coordenada4, color);
 
     }
-    
+
+    /**
+     * Metodo que valida que las coordenadas del cuadrado sean coherentes
+     *
+     * @return boolean true, coordenadas correctas o false, coordenadas
+     * incorrectas
+     */
     @Override
     public boolean validarCoordenadas() {
         if ((super.getCoordenada1()[0] == super.getCoordenada2()[0] && super.getCoordenada1()[1] == super.getCoordenada2()[1])
@@ -60,11 +62,17 @@ public class Cuadrado extends Cuadrilatero {
         }
     }
 
+    /**
+     * Metodo que calcula el area del cuadrado
+     */
     @Override
     public void hallarArea() {
         super.setArea(super.getLado1() * super.getLado1());
     }
 
+    /**
+     * Metodo que clacula el perimetro del cuadrado
+     */
     @Override
     public void hallarPerimetro() {
         super.setPerimetro(super.getLado1() * 4);

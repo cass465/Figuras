@@ -24,10 +24,14 @@ public abstract class Cuadrilatero extends Figura {
     /**
      * Constructor de la clase Cuadrilatero
      *
-     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero
-     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero
-     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @param coordenada1 coordenadas X y Y que componen el primer punto del
+     * cuadrilatero
+     * @param coordenada2 coordenadas X y Y que componen el segundo punto del
+     * cuadrilatero
+     * @param coordenada3 coordenadas X y Y que componen el tercer punto del
+     * cuadrilatero
+     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del
+     * cuadrilatero
      * @param color color que tomara la figura en el plano cartesiano
      */
     public Cuadrilatero(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4, String color) {
@@ -35,11 +39,9 @@ public abstract class Cuadrilatero extends Figura {
         this.coordenada4 = coordenada4;
     }
 
-    
-
     /**
-     * Metodo utilizado para graficar la figura en el plano cartesiano segun las
-     * coordenadas enviadas
+     * Metodo que grafica el cuadrilatero en el plano cartesiano
+     *
      * @param graficador Variable que permite dar caracteristicas de graficacion
      */
     @Override
@@ -73,14 +75,21 @@ public abstract class Cuadrilatero extends Figura {
     /**
      * Establece el valor del lado1 del cuadrilatero a partir de dos coordenadas
      *
-     * @param coordenada1,coordenadas X y Y que componen el primer punto del cuadrilatero
-     * @param coordenada2,coordenadas X y Y que componen el segundo punto del cuadrilatero
+     * @param coordenada1,coordenadas X y Y que componen el primer punto del
+     * cuadrilatero
+     * @param coordenada2,coordenadas X y Y que componen el segundo punto del
+     * cuadrilatero
      */
     public void calcularLado1(byte coordenada1[], byte coordenada2[]) {
         super.setLado1((coordenada2[0] - coordenada1[0]));
 
     }
 
+    /**
+     * Metodo que obtiene la cuarta coordenada x,y del cuadrilatero
+     *
+     * @return Devuelve la cuarta coordenada x,y del cuadrilatero
+     */
     public byte[] getCoordenada4() {
         return coordenada4;
     }

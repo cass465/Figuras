@@ -5,16 +5,13 @@
  */
 package edu.ucundinamarca.core;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
 /**
  * Clase que crea las figuras que se van a graficar
  *
  * @author Camilo Sanabria
  * @version 1.0.0
  */
-public abstract class Figura implements IOperaciones{
+public abstract class Figura implements IOperaciones {
 
     /**
      * Primera coordenada x,y de la figura
@@ -27,22 +24,22 @@ public abstract class Figura implements IOperaciones{
     private byte[] coordenada2;
 
     /**
-     * ercera coordenada x,y de la figura
+     * Tercera coordenada x,y de la figura
      */
     private byte[] coordenada3;
 
     /**
-     * ado que comparten todas las figuras
+     * Lado que comparten todas las figuras
      */
     private float lado1;
 
     /**
-     * rea de la figura
+     * Area de la figura
      */
     private float area;
 
     /**
-     * erimetro de la figura
+     * Perimetro de la figura
      */
     private float perimetro;
 
@@ -65,7 +62,7 @@ public abstract class Figura implements IOperaciones{
         this.coordenada3 = coordenada3;
         this.color = color;
     }
-    
+
     /**
      * Metodo que establece el primer lado
      *
@@ -75,16 +72,24 @@ public abstract class Figura implements IOperaciones{
         this.lado1 = lado1;
     }
 
+    /**
+     * Metodo que establece el area
+     *
+     * @param area Valor de area que se va a asignar
+     */
     public void setArea(float area) {
         this.area = area;
     }
 
+    /**
+     * Metodo que establece el perimetro
+     *
+     * @param perimetro Valor de perimetro que se va a asignar
+     */
     public void setPerimetro(float perimetro) {
         this.perimetro = perimetro;
     }
-    
-    
-    
+
     /**
      * Metodo que obtiene el primer lado
      *
@@ -94,14 +99,29 @@ public abstract class Figura implements IOperaciones{
         return lado1;
     }
 
+    /**
+     * Metodo que obtiene la primera coordenada x,y de la figura
+     *
+     * @return Devuelve la primera coordenada x,y de la figura
+     */
     public byte[] getCoordenada1() {
         return coordenada1;
     }
 
+    /**
+     * Metodo que obtiene la segunda coordenada x,y de la figura
+     *
+     * @return Devuelve la segunda coordenada x,y de la figura
+     */
     public byte[] getCoordenada2() {
         return coordenada2;
     }
 
+    /**
+     * Metodo que obtiene la tercera coordenada x,y de la figura
+     *
+     * @return Devuelve la tercera coordenada x,y de la figura
+     */
     public byte[] getCoordenada3() {
         return coordenada3;
     }

@@ -184,6 +184,11 @@ public class Triangulo extends Figura {
         return tipo;
     }
 
+    /**
+     * Metodo que grafica el triangulo en el plano cartesiano
+     *
+     * @param graficador Variable que permite dar caracteristicas de graficacion
+     */
     @Override
     public void trazarFigura(Graphics graficador) {
         switch (super.getColor()) {
@@ -211,7 +216,13 @@ public class Triangulo extends Figura {
         int[] yCoordenadas = {510 - super.getCoordenada1()[1] * 50, 510 - super.getCoordenada2()[1] * 50, 510 - super.getCoordenada3()[1] * 50};
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 3);
     }
-    
+
+    /**
+     * Metodo que valida que las coordenadas del triangulo sean coherentes
+     *
+     * @return boolean true, coordenadas correctas o false, coordenadas
+     * incorrectas
+     */
     @Override
     public boolean validarCoordenadas() {
         float lado1CatetoX = super.getCoordenada2()[0] - super.getCoordenada1()[0];
@@ -237,11 +248,17 @@ public class Triangulo extends Figura {
         }
     }
 
+    /**
+     * Metodo que calcula el area del triangulo
+     */
     @Override
     public void hallarArea() {
         super.setArea((this.base * this.altura) / 2);
     }
 
+    /**
+     * Metodo que calcula el perimetro del triangulo
+     */
     @Override
     public void hallarPerimetro() {
         super.setPerimetro(super.getLado1() + this.lado2 + this.lado3);
