@@ -5,6 +5,8 @@
  */
 package edu.ucundinamarca.core;
 
+import java.awt.Graphics;
+
 /**
  * Clase hija de cudrilatero, figura cuadrado
  *
@@ -19,11 +21,11 @@ public class Cuadrado extends Cuadrilatero {
      * @author Yeison Cifuentes
      *
      * @param coordenada1 coordenadas X y Y que componen el primer punto del
-     * cuadrilatero 
+     * cuadrilatero
      * @param coordenada2 coordenadas X y Y que componen el segundo punto del
-     * cuadrilatero 
+     * cuadrilatero
      * @param coordenada3 coordenadas X y Y que componen el tercer punto del
-     * cuadrilatero 
+     * cuadrilatero
      * @param coordenada4 coordenadas X y Y que componen el cuarto punto del
      * cuadrilatero
      * @param color, color que tomara la figura en el plano cartesiano
@@ -32,5 +34,39 @@ public class Cuadrado extends Cuadrilatero {
         super(coordenada1, coordenada2, coordenada3, coordenada4, color);
 
     }
+    
+    @Override
+    public boolean validarCoordenadas() {
+        if ((super.getCoordenada1()[0] == super.getCoordenada2()[0] && super.getCoordenada1()[1] == super.getCoordenada2()[1])
+                || (super.getCoordenada1()[0] == super.getCoordenada3()[0] && super.getCoordenada1()[1] == super.getCoordenada3()[1])
+                || (super.getCoordenada1()[0] == super.getCoordenada4()[0] && super.getCoordenada1()[1] == super.getCoordenada4()[1])
+                || (super.getCoordenada2()[0] == super.getCoordenada3()[0] && super.getCoordenada2()[1] == super.getCoordenada3()[1])
+                || (super.getCoordenada2()[0] == super.getCoordenada4()[0] && super.getCoordenada2()[1] == super.getCoordenada4()[1])
+                || (super.getCoordenada3()[0] == super.getCoordenada4()[0] && super.getCoordenada3()[1] == super.getCoordenada4()[1])) {
+            return false;
+        }
+        if (super.getCoordenada1()[1] != super.getCoordenada2()[1] || super.getCoordenada1()[0] == super.getCoordenada2()[0]) {
+            return false;
+        } else if (super.getCoordenada2()[0] != super.getCoordenada3()[0]) {
+            return false;
+        } else if (super.getCoordenada3()[1] != super.getCoordenada4()[1]) {
+            return false;
+        } else if (super.getCoordenada1()[0] != super.getCoordenada4()[0]) {
+            return false;
+        } else if ((super.getCoordenada1()[0] + super.getCoordenada2()[0] != super.getCoordenada2()[1] + super.getCoordenada3()[1])) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    @Override
+    public void hallarArea() {
+        super.setArea(super.getLado1() * super.getLado1());
+    }
+
+    @Override
+    public void hallarPerimetro() {
+        super.setPerimetro(super.getLado1() * 4);
+    }
 }

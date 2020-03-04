@@ -707,12 +707,14 @@ public class FrameFigura extends javax.swing.JFrame {
 
             Cuadrado cuadrado = new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString());
 
-            if (cuadrado.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
-                cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            if (cuadrado.validarCoordenadas() == true) {
+                cuadrado.trazarFigura(pnlGraficaCuadrado.getGraphics());
                 cuadrado.calcularLado1(coordenada1, coordenada2);
+                cuadrado.hallarArea();
+                cuadrado.hallarPerimetro();
                 //Se halla el Area y el perimetro
-                lblAreaCuadrado.setText(cuadrado.hallarArea() + "");
-                lblPerimetroCuadrado.setText(cuadrado.hallarPerimetro() + "");
+                lblAreaCuadrado.setText(cuadrado.getArea() + "");
+                lblPerimetroCuadrado.setText(cuadrado.getPerimetro() + "");
             } else {
                 JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -757,13 +759,15 @@ public class FrameFigura extends javax.swing.JFrame {
 
             Rectangulo rectangulo = new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString());
 
-            if (rectangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3, coordenada4) == true) {
-                rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics(), coordenada1, coordenada2, coordenada3, coordenada4);
+            if (rectangulo.validarCoordenadas() == true) {
+                rectangulo.trazarFigura(pnlGraficaRectangulo.getGraphics());
                 rectangulo.calcularLado1(coordenada1, coordenada2);
                 rectangulo.calcularLado2(coordenada2, coordenada3);
+                rectangulo.hallarArea();
+                rectangulo.hallarPerimetro();
                 //Se halla el Area y el perimetro
-                lblAreaRectangulo.setText(rectangulo.hallarArea() + "");
-                lblPerimetroRectangulo.setText(rectangulo.hallarPerimetro() + "");
+                lblAreaRectangulo.setText(rectangulo.getArea() + "");
+                lblPerimetroRectangulo.setText(rectangulo.getPerimetro()+ "");
             } else {
                 JOptionPane.showMessageDialog(panelRectangulo, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.ERROR_MESSAGE);
@@ -809,13 +813,13 @@ public class FrameFigura extends javax.swing.JFrame {
             byte[] coordenada3 = {Byte.parseByte(txtTrianguloX3.getText()), Byte.parseByte(txtTrianguloY3.getText())};
             Triangulo triangulo = new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString());
 
-            if (triangulo.validarCoordenadas(coordenada1, coordenada2, coordenada3)) {
-                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics(), coordenada1, coordenada2, coordenada3);
+            if (triangulo.validarCoordenadas()) {
+                triangulo.trazarFigura(pnlGraficaTriangulo.getGraphics());
                 triangulo.definirTipo(coordenada1, coordenada2, coordenada3);
                 triangulo.hallarBase(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
                 triangulo.hallarAltura(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3(), triangulo.getTipo());
-                triangulo.hallarArea(triangulo.getBase(), triangulo.getAltura());
-                triangulo.hallarPerimetro(triangulo.getLado1(), triangulo.getLado2(), triangulo.getLado3());
+                triangulo.hallarArea();
+                triangulo.hallarPerimetro();
 
                 areaTrianguloLabel.setText(areaTrianguloLabel.getText() + " " + triangulo.getArea());
                 perimetroTrianguloLabel.setText(perimetroTrianguloLabel.getText() + " " + triangulo.getPerimetro());

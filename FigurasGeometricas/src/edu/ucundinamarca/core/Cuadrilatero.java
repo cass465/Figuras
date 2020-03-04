@@ -14,7 +14,7 @@ import java.awt.Graphics;
  * @author Yeison Cifuentes
  * @version 1.0.0
  */
-public class Cuadrilatero extends Figura {
+public abstract class Cuadrilatero extends Figura {
 
     /**
      * Atributo que obtiene la cordenada 4 del cuadrilatero
@@ -35,52 +35,15 @@ public class Cuadrilatero extends Figura {
         this.coordenada4 = coordenada4;
     }
 
-    /**
-     * Metodo para validar que las coordenadas ingresadas sean correctas
-     *
-     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero 
-     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero 
-     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero 
-     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
-     * @return bool true para coodenadas correctas, false para coordenas incorrectas
-     */
-    public boolean validarCoordenadas(byte[] coordenada1, byte[] coordenada2, byte[] coordenada3, byte[] coordenada4) {
-
-        if ((coordenada1[0] == coordenada2[0] && coordenada1[1] == coordenada2[1])
-                || (coordenada1[0] == coordenada3[0] && coordenada1[1] == coordenada3[1])
-                || (coordenada1[0] == coordenada4[0] && coordenada1[1] == coordenada4[1])
-                || (coordenada2[0] == coordenada3[0] && coordenada2[1] == coordenada3[1])
-                || (coordenada2[0] == coordenada4[0] && coordenada2[1] == coordenada4[1])
-                || (coordenada3[0] == coordenada4[0] && coordenada3[1] == coordenada4[1])) {
-            return false;
-        }
-        if (coordenada1[1] != coordenada2[1] || coordenada1[0] == coordenada2[0]) {
-            return false;
-        } else if (coordenada2[0] != coordenada3[0]) {
-            return false;
-        } else if (coordenada3[1] != coordenada4[1]) {
-            return false;
-        } else if (coordenada1[0] != coordenada4[0]) {
-            return false;
-        } else if ((coordenada1[0] + coordenada2[0] != coordenada2[1] + coordenada3[1])) {
-            return false;
-        } else {
-            return true;
-        }
-
-    }
+    
 
     /**
      * Metodo utilizado para graficar la figura en el plano cartesiano segun las
      * coordenadas enviadas
-     *
-     * @param graficador  permite graficar
-     * @param coordenada1 coordenadas X y Y que componen el primer punto del cuadrilatero 
-     * @param coordenada2 coordenadas X y Y que componen el segundo punto del cuadrilatero 
-     * @param coordenada3 coordenadas X y Y que componen el tercer punto del cuadrilatero 
-     * @param coordenada4 coordenadas X y Y que componen el cuarto punto del cuadrilatero
+     * @param graficador Variable que permite dar caracteristicas de graficacion
      */
-    public void trazarFigura(Graphics graficador, byte coordenada1[], byte coordenada2[], byte coordenada3[], byte coordenada4[]) {
+    @Override
+    public void trazarFigura(Graphics graficador) {
         switch (super.getColor()) {
             case "ROJO":
                 graficador.setColor(Color.RED);
@@ -102,32 +65,9 @@ public class Cuadrilatero extends Figura {
                 break;
         }
 
-        /*graficador.drawLine(coordenada1[0]*50+10, 500-(coordenada1[1]*50), coordenada2[0]*50+10, 500-coordenada2[1]*50);
-         graficador.drawLine(coordenada2[0]*50+10, 500-coordenada2[1]*50, coordenada3[0]*50+10, 500-coordenada3[1]*50);
-         graficador.drawLine(coordenada3[0]*50+10, 500-coordenada3[1]*50, coordenada1[0]*50+10, 500-coordenada1[1]*50);*/
-        int[] xCoordenadas = {coordenada1[0] * 50 + 10, coordenada2[0] * 50 + 10, coordenada3[0] * 50 + 10, coordenada4[0] * 50 + 10};
-        int[] yCoordenadas = {510 - coordenada1[1] * 50, 510 - coordenada2[1] * 50, 510 - coordenada3[1] * 50, 510 - coordenada4[1] * 50};
+        int[] xCoordenadas = {super.getCoordenada1()[0] * 50 + 10, super.getCoordenada2()[0] * 50 + 10, super.getCoordenada3()[0] * 50 + 10, this.coordenada4[0] * 50 + 10};
+        int[] yCoordenadas = {510 - super.getCoordenada1()[1] * 50, 510 - super.getCoordenada2()[1] * 50, 510 - super.getCoordenada3()[1] * 50, 510 - this.coordenada4[1] * 50};
         graficador.fillPolygon(xCoordenadas, yCoordenadas, 4);
-    }
-
-    /**
-     * Metodo para hallar el area del cuadrilatero formado a partir de su lado
-     *
-     * @return float (area)
-     */
-    public float hallarArea() {
-
-        return (super.getLado1() * super.getLado1());
-
-    }
-
-    /**
-     * Metodo para hallar el perimetro del cuadrilatero a partir de su lado
-     *
-     * @return float (perimetro)
-     */
-    public float hallarPerimetro() {
-        return (super.getLado1() * 4);
     }
 
     /**
@@ -141,4 +81,7 @@ public class Cuadrilatero extends Figura {
 
     }
 
+    public byte[] getCoordenada4() {
+        return coordenada4;
+    }
 }

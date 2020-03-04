@@ -5,6 +5,9 @@
  */
 package edu.ucundinamarca.core;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  * Clase que crea los triangulos que se van a graficar
  *
@@ -24,17 +27,17 @@ public class Triangulo extends Figura {
     private float lado3;
 
     /**
-     *  Base del triangulo
+     * Base del triangulo
      */
     private float base;
 
     /**
-     *  Altura del triangulo
+     * Altura del triangulo
      */
     private float altura;
 
     /**
-     *  Tipo del triangulo segun sus caracteristicas
+     * Tipo del triangulo segun sus caracteristicas
      */
     private String tipo;
 
@@ -90,9 +93,9 @@ public class Triangulo extends Figura {
      */
     public void hallarBase(float lado1, float lado2, float lado3, String tipo) {
         if (tipo.equals("EQUILATERO")) {
-            this.base = this.getLado1();
+            this.base = super.getLado1();
         } else if (tipo.equals("ESCALENO")) {
-            this.base = this.getLado1();
+            this.base = super.getLado1();
         } else {
             if (lado1 == lado2) {
                 this.base = this.lado3;
@@ -118,8 +121,8 @@ public class Triangulo extends Figura {
         if (tipo.equals("EQUILATERO")) {
             this.altura = (float) Math.sqrt((this.base * this.base) - ((this.base / 2) * (this.base / 2)));
         } else if (tipo.equals("ESCALENO")) {
-            byte semiperimetro = (byte) ((lado1 + lado2 + lado3) / 2);
-            this.altura = (byte) ((2 / this.getLado1()) * (Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado1))));
+            float semiperimetro = ((lado1 + lado2 + lado3) / 2);
+            this.altura = (float) ((2 / this.getLado1()) * (Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3))));
         } else {
             float cateto = 0;
 
@@ -179,5 +182,68 @@ public class Triangulo extends Figura {
      */
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public void trazarFigura(Graphics graficador) {
+        switch (super.getColor()) {
+            case "ROJO":
+                graficador.setColor(Color.RED);
+                break;
+            case "VERDE":
+                graficador.setColor(Color.GREEN);
+                break;
+            case "AZUL":
+                graficador.setColor(Color.BLUE);
+                break;
+            case "AMARILLO":
+                graficador.setColor(Color.YELLOW);
+                break;
+            case "NEGRO":
+                graficador.setColor(Color.BLACK);
+                break;
+            case "NARANJA":
+                graficador.setColor(Color.ORANGE);
+                break;
+        }
+
+        int[] xCoordenadas = {super.getCoordenada1()[0] * 50 + 10, super.getCoordenada2()[0] * 50 + 10, super.getCoordenada3()[0] * 50 + 10};
+        int[] yCoordenadas = {510 - super.getCoordenada1()[1] * 50, 510 - super.getCoordenada2()[1] * 50, 510 - super.getCoordenada3()[1] * 50};
+        graficador.fillPolygon(xCoordenadas, yCoordenadas, 3);
+    }
+    
+    @Override
+    public boolean validarCoordenadas() {
+        float lado1CatetoX = super.getCoordenada2()[0] - super.getCoordenada1()[0];
+        float lado1CatetoY = super.getCoordenada2()[1] - super.getCoordenada1()[1];
+
+        float pendiente1 = 0;
+        if (lado1CatetoX != 0 && lado1CatetoY != 0) {
+            pendiente1 = lado1CatetoY / lado1CatetoX;
+        }
+
+        float lado2CatetoX = super.getCoordenada3()[0] - super.getCoordenada1()[0];
+        float lado2CatetoY = super.getCoordenada3()[1] - super.getCoordenada1()[1];
+
+        float pendiente2 = 0;
+        if (lado2CatetoX != 0 && lado2CatetoY != 0) {
+            pendiente2 = lado2CatetoY / lado2CatetoX;
+        }
+
+        if (pendiente1 == pendiente2) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public void hallarArea() {
+        super.setArea((this.base * this.altura) / 2);
+    }
+
+    @Override
+    public void hallarPerimetro() {
+        super.setPerimetro(super.getLado1() + this.lado2 + this.lado3);
     }
 }
