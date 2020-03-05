@@ -55,7 +55,7 @@ public class Cuadrado extends Cuadrilatero {
             return false;
         } else if (super.getCoordenada1()[0] != super.getCoordenada4()[0]) {
             return false;
-        } else if ((super.getCoordenada1()[0] + super.getCoordenada2()[0] != super.getCoordenada2()[1] + super.getCoordenada3()[1])) {
+        } else if ((super.getCoordenada2()[0] - super.getCoordenada1()[0] != super.getCoordenada3()[1] - super.getCoordenada2()[1])) {
             return false;
         } else {
             return true;

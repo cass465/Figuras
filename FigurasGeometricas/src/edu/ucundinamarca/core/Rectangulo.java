@@ -45,6 +45,8 @@ public class Rectangulo extends Cuadrilatero {
      */
     public void calcularLado2(byte coordenada2[], byte coordenada3[]) {
         this.lado2 = ((coordenada3[1] - coordenada2[1]));
+        
+       
 
     }
 
@@ -72,7 +74,7 @@ public class Rectangulo extends Cuadrilatero {
             return false;
         } else if (super.getCoordenada1()[0] != super.getCoordenada4()[0]) {
             return false;
-        } else if ((super.getCoordenada1()[0] + super.getCoordenada2()[0] == super.getCoordenada2()[1] + super.getCoordenada3()[1])) {
+        } else if ((super.getCoordenada2()[0] - super.getCoordenada1()[0] == super.getCoordenada3()[1] - super.getCoordenada2()[1])) {
             return false;
         } else {
             return true;
