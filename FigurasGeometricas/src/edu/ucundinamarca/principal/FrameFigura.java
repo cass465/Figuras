@@ -26,7 +26,6 @@ public class FrameFigura extends javax.swing.JFrame {
      * lista global de figuras, que permite agregar triangulos, cuadrados y
      * rectangulos polimorfismo de padre a hijas
      */
-    private byte[] coordenada4;
     List<Figura> figuras = new ArrayList<>();
 
     /**
