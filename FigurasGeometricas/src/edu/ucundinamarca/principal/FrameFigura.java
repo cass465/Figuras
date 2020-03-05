@@ -9,6 +9,7 @@ import edu.ucundinamarca.core.Triangulo;
 import edu.ucundinamarca.core.Cuadrado;
 import edu.ucundinamarca.core.Rectangulo;
 import edu.ucundinamarca.core.Figura;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,10 +22,9 @@ import javax.swing.JOptionPane;
  */
 public class FrameFigura extends javax.swing.JFrame {
 
-    
-     /**
-     * lista global de figuras, que permite agregar triangulos, cuadrados y rectangulos
-     * polimorfismo de padre a hijas
+    /**
+     * lista global de figuras, que permite agregar triangulos, cuadrados y
+     * rectangulos polimorfismo de padre a hijas
      */
     private byte[] coordenada4;
     List<Figura> figuras = new ArrayList<>();
@@ -1232,14 +1232,20 @@ public class FrameFigura extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTrianguloY3KeyTyped
     private void btnGraficarGuardadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarGuardadaActionPerformed
         // TODO add your handling code here:
+        
 
         if (boxGuardada.getSelectedIndex() != 0) {
+
             this.iniciarPlano();
             figuras.get(boxGuardada.getSelectedIndex() - 1).trazarFigura(pnlGraficaFigurasGuardadas.getGraphics());
+            
         } else {
             JOptionPane.showMessageDialog(panelTriangulo, "SELECCIONE UNA DE LAS FIGURAS GUARDADAS, O GUARDE UNA E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
         }
+this.pack();
+
+
 
     }//GEN-LAST:event_btnGraficarGuardadaActionPerformed
     /**
@@ -1259,7 +1265,7 @@ public class FrameFigura extends javax.swing.JFrame {
             if (new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString()).validarCoordenadas()) {
                 figuras.add(new Cuadrado(coordenada1, coordenada2, coordenada3, coordenada4, colorCuadradoBox.getSelectedItem().toString()));
                 boxGuardada.addItem((boxGuardada.getItemCount()) + ".CUADRADO");
-                JOptionPane.showMessageDialog(panelRectangulo, "IMAGEN GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
+                JOptionPane.showMessageDialog(panelRectangulo, "FIGURA GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(panelCuadrado, "COORDENADAS INCORRECTAS, VERIFIQUE E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
@@ -1288,7 +1294,7 @@ public class FrameFigura extends javax.swing.JFrame {
             if (new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString()).validarCoordenadas()) {
                 figuras.add(new Rectangulo(coordenada1, coordenada2, coordenada3, coordenada4, colorRectanguloBox.getSelectedItem().toString()));
                 boxGuardada.addItem((boxGuardada.getItemCount()) + ".RECTANGULO");
-                JOptionPane.showMessageDialog(panelRectangulo, "IMAGEN GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
+                JOptionPane.showMessageDialog(panelRectangulo, "FIGURA GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.INFORMATION_MESSAGE);
 
             } else {
@@ -1316,7 +1322,7 @@ public class FrameFigura extends javax.swing.JFrame {
             if (new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString()).validarCoordenadas()) {
                 figuras.add(new Triangulo(coordenada1, coordenada2, coordenada3, colorTrianguloBox.getSelectedItem().toString()));
                 boxGuardada.addItem((boxGuardada.getItemCount()) + ".TRIANGULO");
-                JOptionPane.showMessageDialog(panelRectangulo, "IMAGEN GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
+                JOptionPane.showMessageDialog(panelRectangulo, "FIGURA GUARDADA CORRECTAMENTE", "MENSAJE DEL SISTEMA",
                         JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(panelTriangulo, "COORDENADAS SIN COHERENCIA PARA UN TRIANGULO", "MENSAJE DEL SISTEMA",
