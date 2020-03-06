@@ -1232,11 +1232,10 @@ public class FrameFigura extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtTrianguloY3KeyTyped
     private void btnGraficarGuardadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarGuardadaActionPerformed
-        // TODO add your handling code here:
-        
+   
+        // TODO add your handling code here:      
 
         if (boxGuardada.getSelectedIndex() != 0) {
-
             this.iniciarPlano(pnlGraficaFigurasGuardadas.getGraphics());
             figuras.get(boxGuardada.getSelectedIndex() - 1).trazarFigura(pnlGraficaFigurasGuardadas.getGraphics());
             
@@ -1244,10 +1243,6 @@ public class FrameFigura extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(panelTriangulo, "SELECCIONE UNA DE LAS FIGURAS GUARDADAS, O GUARDE UNA E INTENTE NUEVAMENTE", "MENSAJE DEL SISTEMA",
                     JOptionPane.ERROR_MESSAGE);
         }
-this.pack();
-
-
-
     }//GEN-LAST:event_btnGraficarGuardadaActionPerformed
     /**
      * Metodo que permite guardar un cuadrado en el arrayList de figuras
