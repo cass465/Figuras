@@ -784,6 +784,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
         // TODO add your handling code here:
+        pnlGraficaCuadrado.paint(pnlGraficaCuadrado.getGraphics());
         iniciarPlano(pnlGraficaCuadrado.getGraphics());
 
         if (this.validarCamposLlenosCuadrado() == true) {
@@ -820,6 +821,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
+        pnlGraficaRectangulo.paint(pnlGraficaRectangulo.getGraphics());
         iniciarPlano(pnlGraficaRectangulo.getGraphics());
 
         if (this.validarCamposLlenosRectangulo()) {
@@ -857,6 +859,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     private void btnGraficarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarTrianguloActionPerformed
         // TODO add your handling code here:
+        pnlGraficaTriangulo.paint(pnlGraficaTriangulo.getGraphics());
         areaTrianguloLabel.setText("AREA:");
         perimetroTrianguloLabel.setText("PERIMETRO:");
         tipoTrianguloLabel.setText("TIPO:");
@@ -1233,7 +1236,8 @@ public class FrameFigura extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTrianguloY3KeyTyped
     private void btnGraficarGuardadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarGuardadaActionPerformed
    
-        // TODO add your handling code here:      
+        // TODO add your handling code here: 
+        pnlGraficaFigurasGuardadas.paint(pnlGraficaFigurasGuardadas.getGraphics());
 
         if (boxGuardada.getSelectedIndex() != 0) {
             this.iniciarPlano(pnlGraficaFigurasGuardadas.getGraphics());
