@@ -9,7 +9,6 @@ import edu.ucundinamarca.core.Triangulo;
 import edu.ucundinamarca.core.Cuadrado;
 import edu.ucundinamarca.core.Rectangulo;
 import edu.ucundinamarca.core.Figura;
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
