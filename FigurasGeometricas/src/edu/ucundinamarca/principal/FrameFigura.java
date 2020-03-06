@@ -9,6 +9,7 @@ import edu.ucundinamarca.core.Triangulo;
 import edu.ucundinamarca.core.Cuadrado;
 import edu.ucundinamarca.core.Rectangulo;
 import edu.ucundinamarca.core.Figura;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -783,7 +784,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     private void btnGraficarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarCuadradoActionPerformed
         // TODO add your handling code here:
-        iniciarPlano();
+        iniciarPlano(pnlGraficaCuadrado.getGraphics());
 
         if (this.validarCamposLlenosCuadrado() == true) {
             byte[] coordenada1 = {Byte.parseByte(txtCuadradoX1.getText()), Byte.parseByte(txtCuadradoY1.getText())};
@@ -819,7 +820,7 @@ public class FrameFigura extends javax.swing.JFrame {
      */
     private void btnGraficarRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectanguloActionPerformed
         // TODO add your handling code here:
-        iniciarPlano();
+        iniciarPlano(pnlGraficaRectangulo.getGraphics());
 
         if (this.validarCamposLlenosRectangulo()) {
             byte[] coordenada1 = {Byte.parseByte(txtRectanguloX1.getText()), Byte.parseByte(txtRectanguloY1.getText())};
@@ -860,7 +861,7 @@ public class FrameFigura extends javax.swing.JFrame {
         perimetroTrianguloLabel.setText("PERIMETRO:");
         tipoTrianguloLabel.setText("TIPO:");
 
-        iniciarPlano();
+        iniciarPlano(pnlGraficaTriangulo.getGraphics());
 
         if (this.validarCamposLlenosTriangulo()) {
             byte[] coordenada1 = {Byte.parseByte(txtTrianguloX1.getText()), Byte.parseByte(txtTrianguloY1.getText())};
@@ -891,24 +892,26 @@ public class FrameFigura extends javax.swing.JFrame {
 
     /**
      * Metodo que dibuja los ejes, flechas y escala del plano
+     * 
+     * @param graficador Permite graficar las lineas del metodo
      */
-    private void iniciarPlano() {
+    private void iniciarPlano(Graphics graficador) {
         //Dibuja los ejes del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 10, 10, 510);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 510, 510, 510);
+        graficador.drawLine(10, 10, 10, 510);
+        graficador.drawLine(10, 510, 510, 510);
         //Dibuja las flechas del plano
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 15, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(10, 0, 5, 5);
-        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 505);
-        pnlGraficaTriangulo.getGraphics().drawLine(520, 510, 515, 515);
+        graficador.drawLine(10, 0, 15, 5);
+        graficador.drawLine(10, 0, 5, 5);
+        graficador.drawLine(520, 510, 515, 505);
+        graficador.drawLine(520, 510, 515, 515);
 
         for (int i = 1; i <= 10; i++) {
             if (i == 1) {
-                pnlGraficaTriangulo.getGraphics().drawLine(0, 10, 20, 10);
+                graficador.drawLine(0, 10, 20, 10);
 
             }
-            pnlGraficaTriangulo.getGraphics().drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
-            pnlGraficaTriangulo.getGraphics().drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
+            graficador.drawLine((50 * i) + 10, 500, (50 * i) + 10, 520);
+            graficador.drawLine(0, (50 * i) + 10, 20, (50 * i) + 10);
         }
     }
 
@@ -1234,7 +1237,7 @@ public class FrameFigura extends javax.swing.JFrame {
 
         if (boxGuardada.getSelectedIndex() != 0) {
 
-            this.iniciarPlano();
+            this.iniciarPlano(pnlGraficaFigurasGuardadas.getGraphics());
             figuras.get(boxGuardada.getSelectedIndex() - 1).trazarFigura(pnlGraficaFigurasGuardadas.getGraphics());
             
         } else {
