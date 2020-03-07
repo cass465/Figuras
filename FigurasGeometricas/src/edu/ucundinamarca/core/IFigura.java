@@ -5,23 +5,14 @@
  */
 package edu.ucundinamarca.core;
 
-import java.awt.Graphics;
-
 /**
  * Interface que contiene el comportamiento de las figuras en el programa
  *
  * @author Camilo Sanabria
  * @version 1.0.0
  */
-public interface IOperaciones {
-
-    /**
-     * Metodo que graficara la figura
-     *
-     * @param graficador Variable que permite dar caracteristicas de graficacion
-     */
-    public void trazarFigura(Graphics graficador);
-
+public interface IFigura {
+    
     /**
      * Metodo que valida si las coordenadas de la figura son coherentes
      *

@@ -9,6 +9,7 @@ import edu.ucundinamarca.core.Triangulo;
 import edu.ucundinamarca.core.Cuadrado;
 import edu.ucundinamarca.core.Rectangulo;
 import edu.ucundinamarca.core.Figura;
+import edu.ucundinamarca.core.IDibujar;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class FrameFigura extends javax.swing.JFrame {
      * lista global de figuras, que permite agregar triangulos, cuadrados y
      * rectangulos polimorfismo de padre a hijas
      */
-    List<Figura> figuras = new ArrayList<>();
+    List<IDibujar> figuras = new ArrayList<>();
 
     /**
      * Constructor de la clase

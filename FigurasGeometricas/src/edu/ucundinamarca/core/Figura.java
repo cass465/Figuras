@@ -11,7 +11,7 @@ package edu.ucundinamarca.core;
  * @author Camilo Sanabria
  * @version 1.0.0
  */
-public abstract class Figura implements IOperaciones {
+public abstract class Figura implements IFigura, IDibujar {
 
     /**
      * Primera coordenada x,y de la figura
